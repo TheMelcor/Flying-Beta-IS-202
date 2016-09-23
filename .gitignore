@@ -1,3 +1,6 @@
 .idea
 /SLIT/nbproject/private/
 /SLIT/SLIT-ejb/nbproject/private/
+/SLIT/SLIT-GUI/nbproject/private/
+/SLIT/SLIT-GUI/build/
+/SLIT/SLIT-GUI/dist/
