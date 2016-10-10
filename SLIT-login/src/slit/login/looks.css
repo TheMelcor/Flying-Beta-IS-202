@@ -1,0 +1,39 @@
+
+
+.btnLogin {
+  -fx-background-color: #88bca2; 
+}
+
+.textFont {
+    -fx-font: 12pt 'Tahoma', sans-serif;
+    -fx-spacing: 2pt; 
+}
+
+.fontSize {
+    -fx-font: 10pt 'Avenir Light';
+    -fx-spacing: 2pt;
+}
+
+.colorWhite {
+    -fx-text-fill: #ffffff;
+}
+
+.fillColor {
+    -fx-background: #88bca2;
+}
+
+
+.backgroundColor {
+    -fx-background-color: #f5f4f3;
+}
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06.okt.2016, 13:13:19
+    Author     : tinahollelandkvist
+*/
+
