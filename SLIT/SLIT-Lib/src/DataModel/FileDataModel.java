@@ -9,7 +9,7 @@ package DataModel;
  *
  * @author Melcor
  */
-public class FileDataModel {
+public class FileDataModel implements java.io.Serializable{
     private String fileId;
     private String fileName;
     private String fileType;

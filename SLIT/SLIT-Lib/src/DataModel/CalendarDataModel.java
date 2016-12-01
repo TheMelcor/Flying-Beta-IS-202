@@ -9,7 +9,7 @@ package DataModel;
  *
  * @author Melcor
  */
-public class CalendarDataModel {
+public class CalendarDataModel implements java.io.Serializable{
     private String calendarId;
     private String calendarTitle;
     private String calendarDesc;

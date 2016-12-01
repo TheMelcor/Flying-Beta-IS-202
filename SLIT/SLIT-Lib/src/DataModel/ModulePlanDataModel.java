@@ -9,7 +9,7 @@ package DataModel;
  *
  * @author Melcor
  */
-public class ModulePlanDataModel {
+public class ModulePlanDataModel implements java.io.Serializable{
     private String modulePlanId;
     private String handinDate;
     private int moduleNr;

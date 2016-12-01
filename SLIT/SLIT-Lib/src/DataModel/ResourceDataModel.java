@@ -9,7 +9,7 @@ package DataModel;
  *
  * @author Melcor
  */
-public class ResourceDataModel {
+public class ResourceDataModel implements java.io.Serializable{
     private String resourceId;
     private String content;
     private String resourceType;

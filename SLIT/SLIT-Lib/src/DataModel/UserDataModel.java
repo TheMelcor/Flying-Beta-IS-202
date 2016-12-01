@@ -14,26 +14,29 @@ public class UserDataModel implements java.io.Serializable{
     String FirstName;
     String LastName;
     String Email;
-    int UserRole;
+    UsrRoleDataModel UserRole;
     String Password;
     
-    UserDataModel(int uid, String fname, String lname, String email, int urole, String pword){
-        this.UserId = uid;
+    public UserDataModel(){
+        
+    }
+    
+    public UserDataModel(String fname, String lname, String email, UsrRoleDataModel urole, String pword){
         this.FirstName = fname;
         this.LastName = lname;
         this.Email = email;
         this.UserRole = urole;
         this.Password = pword;
     }
-    
-    public int getId(){
+
+    public int getUserId() {
         return UserId;
     }
-    
-    public void setId(int id){
-        this.UserId = id;
+
+    public void setUserId(int UserId) {
+        this.UserId = UserId;
     }
-    
+
     public String getFirstName(){
         return FirstName;
     }
@@ -61,14 +64,15 @@ public class UserDataModel implements java.io.Serializable{
     public void setEmail(String Email){
         this.Email = Email;
     }
-    
-    public int getRole(){
+
+    public UsrRoleDataModel getUserRole() {
         return UserRole;
     }
-    
-    public void setRole(int UserRole){
+
+    public void setUserRole(UsrRoleDataModel UserRole) {
         this.UserRole = UserRole;
     }
+    
     
     public String getPassword(){
         return Password;

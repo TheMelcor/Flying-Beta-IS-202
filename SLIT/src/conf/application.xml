@@ -4,4 +4,7 @@
   <module>
     <ejb>SLIT-ejb.jar</ejb>
   </module>
+  <module>
+    <java>Slit-Application.jar</java>
+  </module>
 </application>

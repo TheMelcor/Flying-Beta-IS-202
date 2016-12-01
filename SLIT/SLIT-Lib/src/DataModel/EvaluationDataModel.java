@@ -9,7 +9,7 @@ package DataModel;
  *
  * @author Melcor
  */
-public class EvaluationDataModel {
+public class EvaluationDataModel implements java.io.Serializable{
     private String evaluationId;
     private String date;
     private String evaluation;

@@ -18,7 +18,9 @@ import javax.ejb.Remote;
 public interface UserSessionBeanRemote {
     UserDataModel getUserFromId(int id);
     
-    UserDataModel loginUser(String UserName, String password);
+    UserDataModel loginUser(String email, String password);
     
     List<UserDataModel> getAllUsers();
+    
+    void saveUser(UserDataModel user);
 }
