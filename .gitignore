@@ -10,3 +10,6 @@
 /SLIT/SLIT-ejb/build/
 /SLIT/build/
 /SLIT/SLIT-ejb/dist/
+/SLIT/Slit-Application/build/
+/SLIT/Slit-Application/dist/
+/SLIT/Slit-Application/nbproject/private/
