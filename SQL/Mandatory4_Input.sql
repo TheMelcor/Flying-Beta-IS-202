@@ -1,4 +1,4 @@
-INSERT INTO UsrRole VALUES (
+handinINSERT INTO UsrRole VALUES (
 0,
 'Teacher'
 );

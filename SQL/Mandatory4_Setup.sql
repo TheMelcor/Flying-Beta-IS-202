@@ -46,7 +46,7 @@ FOREIGN KEY (ModuleNr) REFERENCES Module(ModuleNr)
 
 CREATE TABLE Response
 (
-RespId varchar(255) NOT NULL,
+RespId int NOT NULL AUTO_INCREMENT,
 RespComment varchar(255),
 RespDate TimeStamp,
 WrittenBy int NOT NULL,
@@ -58,7 +58,7 @@ FOREIGN KEY (Handin) REFERENCES Handin(Id)
 
 CREATE TABLE Evaluation
 (
-EvalId varchar(255) NOT NULL,
+EvalId int NOT NULL AUTO_INCREMENT,
 EvalDate TimeStamp,
 Evaluation varchar(10),
 EvaluatedBy int NOT NULL,
