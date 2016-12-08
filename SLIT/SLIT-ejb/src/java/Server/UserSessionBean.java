@@ -63,7 +63,7 @@ public class UserSessionBean implements UserSessionBeanRemote{
             
         }
         catch (javax.persistence.NoResultException e){
-            
+            e.printStackTrace();
         }
         catch (Exception e){
             e.printStackTrace();

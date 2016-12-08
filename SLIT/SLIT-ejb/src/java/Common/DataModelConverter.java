@@ -7,10 +7,12 @@ package Common;
 
 import DataModel.DeliveryDataModel;
 import DataModel.ModuleDataModel;
+import DataModel.ResponseDataModel;
 import DataModel.UserDataModel;
 import DataModel.UsrRoleDataModel;
 import Database.Handin;
 import Database.Module;
+import Database.Response;
 import Database.User;
 import Database.Usrrole;
 import java.sql.Timestamp;
@@ -113,6 +115,18 @@ public class DataModelConverter {
         delivery.setContent(deliveryModel.getContent());
         
         return delivery;
+    }
+    
+    public static ResponseDataModel convertResponseEntityToModel(Response response){
+        ResponseDataModel responseModel = new ResponseDataModel();
+        
+        responseModel.setResponseId(response.getRespId());
+        responseModel.setAuthor(convertUserEntityToModel(response.getWrittenBy()));
+        responseModel.setDeliveryId(convertDeliveryEntityToModel(response.getHandin()));
+        responseModel.setComment(response.getRespComment());
+        responseModel.setDate(String.valueOf(response.getRespDate()));
+        
+        return responseModel;
     }
     
    

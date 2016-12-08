@@ -10,25 +10,29 @@ package DataModel;
  * @author Melcor
  */
 public class ResponseDataModel implements java.io.Serializable{
-    private String responseId;
+    private int responseId;
     private String comment;
     private String date;
-    private String author;
-    private String deliveryId;
+    private UserDataModel author;
+    private DeliveryDataModel deliveryId;
     
-    public ResponseDataModel(String responseId, String comment, String date, String author, String deliveryId){
-        this.responseId = responseId;
+    public ResponseDataModel(){
+        
+    }
+    
+    public ResponseDataModel(String comment, String date, UserDataModel author, DeliveryDataModel deliveryId){
+        
         this.comment = comment;
         this.date = date;
         this.author = author;
         this.deliveryId = deliveryId;
     }
     
-    public String getResponseId(){
+    public int getResponseId(){
         return responseId;
     }
     
-    public void setResponseId(String responseId){
+    public void setResponseId(int responseId){
         this.responseId = responseId;
     }
     
@@ -48,19 +52,19 @@ public class ResponseDataModel implements java.io.Serializable{
         this.date = date;
     }
     
-    public String getAuthor(){
+    public UserDataModel getAuthor(){
         return author;
     }
     
-    public void setAuthor(String author){
+    public void setAuthor(UserDataModel author){
         this.author = author;
     }
     
-    public String getDeliveryId(){
+    public DeliveryDataModel getDeliveryId(){
         return deliveryId;
     }
     
-    public void setDeliveryId(String deliveryId){
+    public void setDeliveryId(DeliveryDataModel deliveryId){
         this.deliveryId = deliveryId;
     }
 }

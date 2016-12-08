@@ -7,6 +7,8 @@ package Server;
 
 import Common.DataModelConverter;
 import DataModel.DeliveryDataModel;
+import DataModel.ModuleDataModel;
+import DataModel.UserDataModel;
 import Database.Handin;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +32,7 @@ public class DeliverySessionBean implements DeliverySessionBeanRemote {
     }
 
     @Override
-    public DeliveryDataModel getDeliveryFromId(String id){
+    public DeliveryDataModel getDeliveryFromId(int id){
         DeliveryDataModel delivery = new DeliveryDataModel();
         
         try{
@@ -64,5 +66,33 @@ public class DeliverySessionBean implements DeliverySessionBeanRemote {
         }
         
         return allDeliveries;
+    }
+    
+    @Override
+    public List<DeliveryDataModel> getDeliveriesByUser(UserDataModel user){
+        List<DeliveryDataModel> allDeliveries = getAllDeliveries();
+        
+        List<DeliveryDataModel> userDeliveries = new ArrayList<DeliveryDataModel>();
+        
+        for (DeliveryDataModel delivery : allDeliveries){
+            if (delivery.getDeliveredBy().equals(user)){
+                userDeliveries.add(delivery);
+            }
+        }
+        return userDeliveries;
+    }
+    
+    @Override
+    public List<DeliveryDataModel> getDeliveriesByModule(ModuleDataModel module){
+        List<DeliveryDataModel> allDeliveries = getAllDeliveries();
+        
+        List<DeliveryDataModel> moduleDeliveries = new ArrayList<DeliveryDataModel>();
+        
+        for (DeliveryDataModel delivery : allDeliveries){
+            if (delivery.getModuleNr().equals(module)){
+                moduleDeliveries.add(delivery);
+            }
+        }
+        return moduleDeliveries;
     }
 }

@@ -6,6 +6,8 @@
 package Server;
 
 import DataModel.DeliveryDataModel;
+import DataModel.ModuleDataModel;
+import DataModel.UserDataModel;
 import java.util.List;
 import javax.ejb.Remote;
 
@@ -16,7 +18,9 @@ import javax.ejb.Remote;
 @Remote
 public interface DeliverySessionBeanRemote {
     
-    public DeliveryDataModel getDeliveryFromId(String id);
-    public List<DeliveryDataModel> getAllDeliveries();
+    DeliveryDataModel getDeliveryFromId(int id);
+    List<DeliveryDataModel> getAllDeliveries();
+    List<DeliveryDataModel> getDeliveriesByUser(UserDataModel user);
+    List<DeliveryDataModel> getDeliveriesByModule(ModuleDataModel module);
       
 }

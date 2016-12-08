@@ -15,11 +15,6 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface ResponseSessionBeanRemote {
-    boolean addResponse(ResponseDataModel response);
-    
-    ResponseDataModel getResponseById(String id);
-    
-    List<ResponseDataModel> getAllResponses();
-    
-    List<ResponseDataModel> getAllResponsesByDelivery(String delivery);
+
+    ResponseDataModel getResponseById(int id);
 }
