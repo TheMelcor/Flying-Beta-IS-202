@@ -6,7 +6,7 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -45,7 +45,7 @@ public class Usrrole implements Serializable {
     @Column(name = "RoleName", nullable = false, length = 32)
     private String roleName;
     @OneToMany(mappedBy = "usrRole")
-    private List<User> userList;
+    private Collection<User> userCollection;
 
     public Usrrole() {
     }
@@ -76,12 +76,12 @@ public class Usrrole implements Serializable {
     }
 
     @XmlTransient
-    public List<User> getUserList() {
-        return userList;
+    public Collection<User> getUserCollection() {
+        return userCollection;
     }
 
-    public void setUserList(List<User> userList) {
-        this.userList = userList;
+    public void setUserCollection(Collection<User> userCollection) {
+        this.userCollection = userCollection;
     }
 
     @Override

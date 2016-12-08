@@ -83,7 +83,7 @@ kan skrive kode som lager nye objekter',
 );
 
 INSERT INTO Handin VALUES (
-'0',
+NULL,
 '2016-11-17 15:40:43',
 3,
 'I denne modulen har jeg lært å bruke bluej til å programmere i java, se vedlagt video fil.',
@@ -91,7 +91,7 @@ INSERT INTO Handin VALUES (
 );
 
 INSERT INTO Handin VALUES ( 
-'1',
+NULL,
 '2016-11-15 15:30:09',
 4,
 'I denne modulen har jeg lært java.',
@@ -99,7 +99,7 @@ INSERT INTO Handin VALUES (
 );
 
 INSERT INTO Handin VALUES (
-'2',
+NULL,
 '2016-11-20 12:21:23',
 3,
 'I denne modulen har jeg lært om klasser og metoder.',
@@ -107,51 +107,51 @@ INSERT INTO Handin VALUES (
 );
 
 INSERT INTO Response VALUES (
-'0',
+NULL,
 'Dette ser bra ut',
 '2016-11-19 15:40:43',
 2,
-'0'
+1
 );
 
 INSERT INTO Response VALUES (
-'1',
+NULL,
 'Dette ser helt ok ut',
 '2016-11-19 20:40:43',
 1,
-'0'
+1
 );
 
 INSERT INTO Response VALUES (
-'2',
+NULL,
 'Dette må du jobbe litt mer med',
 '2016-11-20 20:10:43',
 1,
-'1'
+2
 );
 
 INSERT INTO Response VALUES (
-'3',
+NULL,
 'Dette ser bra ut, godt jobba!',
 '2016-11-21 04:40:43',
 1,
-'2'
+3
 );
 
 INSERT INTO Evaluation VALUE (
-'0',
+NULL,
 '2016-11-21 04:42:43',
 'A',
 1,
-'2'
+3
 );
 
 INSERT INTO Evaluation VALUE (
-'1',
+NULL,
 '2016-11-21 14:42:43',
 'E',
 1,
-'1'
+2
 );
 
 INSERT INTO Resources VALUE (
@@ -212,312 +212,312 @@ INSERT INTO Resources VALUE (
 
 
 INSERT INTO Quiz VALUE (
-'0',
+NULL,
 'Quiz 1',
 1
 );
 
 INSERT INTO Quiz VALUE (
-'1',
+NULL,
 'Quiz 2',
 2
 );
 
 INSERT INTO Quiz VALUE (
-'2',
+NULL,
 'Quiz 3',
 3
 );
 
 INSERT INTO Question VALUE (
-'0',
+NULL,
 'Some Question',
-'0'
+1
 );
 INSERT INTO Question VALUE (
-'1',
+NULL,
 'Some Question',
-'0'
+1
 );
 INSERT INTO Question VALUE (
-'2',
+NULL,
 'Some Question',
-'0'
+1
 );
 INSERT INTO Question VALUE (
-'3',
+NULL,
 'Some Question',
-'0'
+1
 );
 INSERT INTO Question VALUE (
-'4',
+NULL,
 'Some Question',
-'0'
+1
 );
 INSERT INTO Question VALUE (
-'5',
+NULL,
 'Some Question',
-'0'
+1
 );
 INSERT INTO Question VALUE (
-'6',
+NULL,
 'Some Question',
-'0'
+1
 );
 INSERT INTO Question VALUE (
-'7',
+NULL,
 'Some Question',
-'0'
+1
 );
 INSERT INTO Question VALUE (
-'8',
+NULL,
 'Some Question',
-'0'
+1
 );
 INSERT INTO Question VALUE (
-'9',
+NULL,
 'Some Question',
-'0'
+1
 );
 
 INSERT INTO Question VALUE (
-'10',
+NULL,
 'Some Question',
-'1'
+2
 );
 INSERT INTO Question VALUE (
-'11',
+NULL,
 'Some Question',
-'1'
+2
 );
 INSERT INTO Question VALUE (
-'12',
+NULL,
 'Some Question',
-'1'
+2
 );
 INSERT INTO Question VALUE (
-'13',
+NULL,
 'Some Question',
-'1'
+2
 );
 INSERT INTO Question VALUE (
-'14',
+NULL,
 'Some Question',
-'1'
+2
 );
 INSERT INTO Question VALUE (
-'15',
+NULL,
 'Some Question',
-'1'
+2
 );
 INSERT INTO Question VALUE (
-'16',
+NULL,
 'Some Question',
-'1'
+2
 );
 INSERT INTO Question VALUE (
-'17',
+NULL,
 'Some Question',
-'1'
+2
 );
 
 INSERT INTO Question VALUE (
-'18',
+NULL,
 'Some Question',
-'2'
+3
 );
 INSERT INTO Question VALUE (
-'19',
+NULL,
 'Some Question',
-'2'
+3
 );
 INSERT INTO Question VALUE (
-'20',
+NULL,
 'Some Question',
-'2'
+3
 );
 INSERT INTO Question VALUE (
-'21',
+NULL,
 'Some Question',
-'2'
+3
 );
 INSERT INTO Question VALUE (
-'22',
+NULL,
 'Some Question',
-'2'
+3
 );
 
 INSERT INTO Answer VALUE (
-'0',
+NULL,
 'Some Answer',
 True,
-'0'
+1
 );
 INSERT INTO Answer VALUE (
-'1',
+NULL,
 'Some Answer',
 False,
-'1'
+2
 );
 INSERT INTO Answer VALUE (
-'2',
+NULL,
 'Some Answer',
 False,
-'2'
+3
 );
 INSERT INTO Answer VALUE (
-'3',
+NULL,
 'Some Answer',
 False,
-'3'
+4
 );
 INSERT INTO Answer VALUE (
-'4',
+NULL,
 'Some Answer',
 True,
-'4'
+5
 );
 INSERT INTO Answer VALUE (
-'5',
+NULL,
 'Some Answer',
 False,
-'5'
+6
 );
 INSERT INTO Answer VALUE (
-'6',
+NULL,
 'Some Answer',
 False,
-'6'
+7
 );
 INSERT INTO Answer VALUE (
-'7',
+NULL,
 'Some Answer',
 False,
-'7'
+8
 );
 INSERT INTO Answer VALUE (
-'8',
+NULL,
 'Some Answer',
 True,
-'8'
+9
 );
 INSERT INTO Answer VALUE (
-'9',
+NULL,
 'Some Answer',
 False,
-'9'
+10
 );
 INSERT INTO Answer VALUE (
-'10',
+NULL,
 'Some Answer',
 False,
-'10'
+11
 );
 INSERT INTO Answer VALUE (
-'11',
+NULL,
 'Some Answer',
 False,
-'11'
+12
 );
 INSERT INTO Answer VALUE (
-'12',
+NULL,
 'Some Answer',
 True,
-'12'
+13
 );
 INSERT INTO Answer VALUE (
-'13',
+NULL,
 'Some Answer',
 False,
-'13'
+14
 );
 INSERT INTO Answer VALUE (
-'14',
+NULL,
 'Some Answer',
 False,
-'14'
+15
 );
 INSERT INTO Answer VALUE (
-'15',
+NULL,
 'Some Answer',
 False,
-'15'
+16
 );
 INSERT INTO Answer VALUE (
-'16',
+NULL,
 'Some Answer',
 True,
-'16'
+17
 );
 INSERT INTO Answer VALUE (
-'17',
+NULL,
 'Some Answer',
 False,
-'17'
+18
 );
 INSERT INTO Answer VALUE (
-'18',
+NULL,
 'Some Answer',
 False,
-'18'
+19
 );
 INSERT INTO Answer VALUE (
-'19',
+NULL,
 'Some Answer',
 False,
-'19'
+20
 );
 INSERT INTO Answer VALUE (
-'20',
+NULL,
 'Some Answer',
 True,
-'20'
+21
 );
 INSERT INTO Answer VALUE (
-'21',
+NULL,
 'Some Answer',
 False,
-'21'
+22
 );
 INSERT INTO Answer VALUE (
-'22',
+NULL,
 'Some Answer',
 False,
-'22'
+23
 );
 
 
 
 
 INSERT INTO QuizResults VALUE (
-'0',
+NULL,
 8,
 2,
-'0',
+1,
 3
 );
 
 INSERT INTO QuizResults VALUE (
-'1',
+NULL,
 5,
 5,
-'0',
+1,
 4
 );
 
 INSERT INTO QuizResults VALUE (
-'2',
+NULL,
 8,
 0,
-'1',
+2,
 3
 );
 
 INSERT INTO QuizResults VALUE (
-'3',
+NULL,
 8,
 0,
-'1',
+2,
 4
 );
 

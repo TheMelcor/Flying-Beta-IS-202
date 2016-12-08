@@ -10,6 +10,8 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -38,11 +40,10 @@ public class Evaluation implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 255)
-    @Column(name = "EvalId", nullable = false, length = 255)
-    private String evalId;
+    @Column(name = "EvalId", nullable = false)
+    private Integer evalId;
     @Basic(optional = false)
     @NotNull
     @Column(name = "EvalDate", nullable = false)
@@ -61,20 +62,20 @@ public class Evaluation implements Serializable {
     public Evaluation() {
     }
 
-    public Evaluation(String evalId) {
+    public Evaluation(Integer evalId) {
         this.evalId = evalId;
     }
 
-    public Evaluation(String evalId, Date evalDate) {
+    public Evaluation(Integer evalId, Date evalDate) {
         this.evalId = evalId;
         this.evalDate = evalDate;
     }
 
-    public String getEvalId() {
+    public Integer getEvalId() {
         return evalId;
     }
 
-    public void setEvalId(String evalId) {
+    public void setEvalId(Integer evalId) {
         this.evalId = evalId;
     }
 

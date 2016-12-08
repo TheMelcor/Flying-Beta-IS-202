@@ -6,7 +6,7 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -62,15 +62,15 @@ public class User implements Serializable {
     @Column(name = "Passwrd", length = 255)
     private String passwrd;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "ownerId")
-    private List<Calendar> calendarList;
+    private Collection<Calendar> calendarCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
-    private List<Quizresults> quizresultsList;
+    private Collection<Quizresults> quizresultsCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "evaluatedBy")
-    private List<Evaluation> evaluationList;
+    private Collection<Evaluation> evaluationCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "deliveredBy")
-    private List<Handin> handinList;
+    private Collection<Handin> handinCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "writtenBy")
-    private List<Response> responseList;
+    private Collection<Response> responseCollection;
     @JoinColumn(name = "UsrRole", referencedColumnName = "RoleId")
     @ManyToOne
     private Usrrole usrRole;
@@ -123,48 +123,48 @@ public class User implements Serializable {
     }
 
     @XmlTransient
-    public List<Calendar> getCalendarList() {
-        return calendarList;
+    public Collection<Calendar> getCalendarCollection() {
+        return calendarCollection;
     }
 
-    public void setCalendarList(List<Calendar> calendarList) {
-        this.calendarList = calendarList;
-    }
-
-    @XmlTransient
-    public List<Quizresults> getQuizresultsList() {
-        return quizresultsList;
-    }
-
-    public void setQuizresultsList(List<Quizresults> quizresultsList) {
-        this.quizresultsList = quizresultsList;
+    public void setCalendarCollection(Collection<Calendar> calendarCollection) {
+        this.calendarCollection = calendarCollection;
     }
 
     @XmlTransient
-    public List<Evaluation> getEvaluationList() {
-        return evaluationList;
+    public Collection<Quizresults> getQuizresultsCollection() {
+        return quizresultsCollection;
     }
 
-    public void setEvaluationList(List<Evaluation> evaluationList) {
-        this.evaluationList = evaluationList;
-    }
-
-    @XmlTransient
-    public List<Handin> getHandinList() {
-        return handinList;
-    }
-
-    public void setHandinList(List<Handin> handinList) {
-        this.handinList = handinList;
+    public void setQuizresultsCollection(Collection<Quizresults> quizresultsCollection) {
+        this.quizresultsCollection = quizresultsCollection;
     }
 
     @XmlTransient
-    public List<Response> getResponseList() {
-        return responseList;
+    public Collection<Evaluation> getEvaluationCollection() {
+        return evaluationCollection;
     }
 
-    public void setResponseList(List<Response> responseList) {
-        this.responseList = responseList;
+    public void setEvaluationCollection(Collection<Evaluation> evaluationCollection) {
+        this.evaluationCollection = evaluationCollection;
+    }
+
+    @XmlTransient
+    public Collection<Handin> getHandinCollection() {
+        return handinCollection;
+    }
+
+    public void setHandinCollection(Collection<Handin> handinCollection) {
+        this.handinCollection = handinCollection;
+    }
+
+    @XmlTransient
+    public Collection<Response> getResponseCollection() {
+        return responseCollection;
+    }
+
+    public void setResponseCollection(Collection<Response> responseCollection) {
+        this.responseCollection = responseCollection;
     }
 
     public Usrrole getUsrRole() {

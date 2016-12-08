@@ -6,8 +6,8 @@
 package Database;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -73,7 +73,7 @@ public class Calendar implements Serializable {
     @ManyToOne(optional = false)
     private User ownerId;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "calendarId")
-    private List<Moduleplan> moduleplanList;
+    private Collection<Moduleplan> moduleplanCollection;
 
     public Calendar() {
     }
@@ -145,12 +145,12 @@ public class Calendar implements Serializable {
     }
 
     @XmlTransient
-    public List<Moduleplan> getModuleplanList() {
-        return moduleplanList;
+    public Collection<Moduleplan> getModuleplanCollection() {
+        return moduleplanCollection;
     }
 
-    public void setModuleplanList(List<Moduleplan> moduleplanList) {
-        this.moduleplanList = moduleplanList;
+    public void setModuleplanCollection(Collection<Moduleplan> moduleplanCollection) {
+        this.moduleplanCollection = moduleplanCollection;
     }
 
     @Override

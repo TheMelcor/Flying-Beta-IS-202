@@ -6,8 +6,8 @@
 package Database;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -61,13 +61,13 @@ public class Module implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date handinDate;
     @OneToMany(mappedBy = "moduleNr")
-    private List<Quiz> quizList;
+    private Collection<Quiz> quizCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "moduleNr")
-    private List<Resources> resourcesList;
+    private Collection<Resources> resourcesCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "moduleNr")
-    private List<Handin> handinList;
+    private Collection<Handin> handinCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "moduleNr")
-    private List<Moduleplan> moduleplanList;
+    private Collection<Moduleplan> moduleplanCollection;
 
     public Module() {
     }
@@ -122,39 +122,39 @@ public class Module implements Serializable {
     }
 
     @XmlTransient
-    public List<Quiz> getQuizList() {
-        return quizList;
+    public Collection<Quiz> getQuizCollection() {
+        return quizCollection;
     }
 
-    public void setQuizList(List<Quiz> quizList) {
-        this.quizList = quizList;
-    }
-
-    @XmlTransient
-    public List<Resources> getResourcesList() {
-        return resourcesList;
-    }
-
-    public void setResourcesList(List<Resources> resourcesList) {
-        this.resourcesList = resourcesList;
+    public void setQuizCollection(Collection<Quiz> quizCollection) {
+        this.quizCollection = quizCollection;
     }
 
     @XmlTransient
-    public List<Handin> getHandinList() {
-        return handinList;
+    public Collection<Resources> getResourcesCollection() {
+        return resourcesCollection;
     }
 
-    public void setHandinList(List<Handin> handinList) {
-        this.handinList = handinList;
+    public void setResourcesCollection(Collection<Resources> resourcesCollection) {
+        this.resourcesCollection = resourcesCollection;
     }
 
     @XmlTransient
-    public List<Moduleplan> getModuleplanList() {
-        return moduleplanList;
+    public Collection<Handin> getHandinCollection() {
+        return handinCollection;
     }
 
-    public void setModuleplanList(List<Moduleplan> moduleplanList) {
-        this.moduleplanList = moduleplanList;
+    public void setHandinCollection(Collection<Handin> handinCollection) {
+        this.handinCollection = handinCollection;
+    }
+
+    @XmlTransient
+    public Collection<Moduleplan> getModuleplanCollection() {
+        return moduleplanCollection;
+    }
+
+    public void setModuleplanCollection(Collection<Moduleplan> moduleplanCollection) {
+        this.moduleplanCollection = moduleplanCollection;
     }
 
     @Override

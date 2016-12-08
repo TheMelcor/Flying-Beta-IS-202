@@ -34,7 +34,7 @@ PRIMARY KEY (ModuleNr)
 
 CREATE TABLE Handin
 (
-Id varchar(255) NOT NULL,
+Id int NOT NULL AUTO_INCREMENT,
 DeliveryDate TimeStamp,
 DeliveredBy int NOT NULL,
 Content varchar(255),
@@ -50,7 +50,7 @@ RespId varchar(255) NOT NULL,
 RespComment varchar(255),
 RespDate TimeStamp,
 WrittenBy int NOT NULL,
-Handin varchar(255) NOT NULL,
+Handin int NOT NULL,
 PRIMARY KEY (RespId),
 FOREIGN KEY (WrittenBy) REFERENCES User(UserId),
 FOREIGN KEY (Handin) REFERENCES Handin(Id)
@@ -62,7 +62,7 @@ EvalId varchar(255) NOT NULL,
 EvalDate TimeStamp,
 Evaluation varchar(10),
 EvaluatedBy int NOT NULL,
-Handin varchar(255) NOT NULL,
+Handin int NOT NULL,
 PRIMARY KEY (EvalId),
 FOREIGN KEY (EvaluatedBy) REFERENCES User(UserId),
 FOREIGN KEY (Handin) REFERENCES Handin(Id) 
@@ -91,7 +91,7 @@ FOREIGN KEY (ResourceId) REFERENCES Resources(ResourceId)
 
 CREATE TABLE Quiz
 (
-QuizId varchar(255) NOT NULL,
+QuizId int NOT NULL AUTO_INCREMENT,
 QuizName varchar(255),
 ModuleNr Int(10),
 PRIMARY KEY (QuizId),
@@ -100,29 +100,29 @@ FOREIGN KEY (ModuleNr) REFERENCES Module(ModuleNr)
 
 CREATE TABLE Question
 (
-QuestionId varchar(255) NOT NULL,
+QuestionId int NOT NULL AUTO_INCREMENT,
 Question varchar(255),
-QuizId varchar(255) NOT NULL,
+QuizId int NOT NULL,
 PRIMARY KEY (QuestionId),
 FOREIGN KEY (QuizId) REFERENCES Quiz(QuizId)
 );
 
 CREATE TABLE Answer 
 (
-AnswerId varchar(255) NOT NULL,
+AnswerId int NOT NULL AUTO_INCREMENT,
 Answer varchar(255),
 RightAnswer boolean,
-QuestionId varchar(255) NOT NULL,
+QuestionId int NOT NULL,
 PRIMARY KEY (AnswerId),
 FOREIGN KEY (QuestionId) REFERENCES Question(QuestionId)
 );
 
 CREATE TABLE QuizResults
 (
-ResultId varchar(255) NOT NULL,
+ResultId int NOT NULL AUTO_INCREMENT,
 RightAnswers int(10),
 WrongAnswers int(10),
-QuizId varchar(255) NOT NULL,
+QuizId int NOT NULL,
 UserId int NOT NULL,
 PRIMARY KEY (ResultId),
 FOREIGN KEY (QuizId) REFERENCES Quiz(QuizId),

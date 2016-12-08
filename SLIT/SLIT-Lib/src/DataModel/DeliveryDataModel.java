@@ -10,33 +10,36 @@ package DataModel;
  * @author Melcor
  */
 public class DeliveryDataModel implements java.io.Serializable{
-    private String id;
-    private String deliveredBy;
+    private int id;
+    private UserDataModel deliveredBy;
     private String deliveryDate;
     private String content;
-    private int moduleNr;
+    private ModuleDataModel moduleNr;
     
-    public DeliveryDataModel(String id, String deliveredBy, String deliveryDate, String content, int moduleNr){
-        this.id = id;
+    public DeliveryDataModel(){
+        
+    }
+    
+    public DeliveryDataModel(UserDataModel deliveredBy, String deliveryDate, String content, ModuleDataModel moduleNr){
         this.deliveredBy = deliveredBy;
         this.deliveryDate = deliveryDate;
         this.content = content;
         this.moduleNr = moduleNr;
     }
     
-    public String getId(){
+    public int getId(){
         return id;
     }
     
-    public void setId(String id){
+    public void setId(int id){
         this.id = id;
     }
     
-    public String getDeliveredBy(){
+    public UserDataModel getDeliveredBy(){
         return deliveredBy;
     }
     
-    public void setDeliveredBy(String deliveredBy){
+    public void setDeliveredBy(UserDataModel deliveredBy){
         this.deliveredBy = deliveredBy;
     }
     
@@ -56,11 +59,11 @@ public class DeliveryDataModel implements java.io.Serializable{
         this.content = content;
     }
     
-    public int getModuleNr(){
+    public ModuleDataModel getModuleNr(){
         return moduleNr;
     }
     
-    public void setModuleNr(int moduleNr){
+    public void setModuleNr(ModuleDataModel moduleNr){
         this.moduleNr = moduleNr;
     }
 }

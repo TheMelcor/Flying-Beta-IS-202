@@ -6,7 +6,7 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -54,7 +54,7 @@ public class Resources implements Serializable {
     @ManyToOne(optional = false)
     private Module moduleNr;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "resourceId")
-    private List<Files> filesList;
+    private Collection<Files> filesCollection;
 
     public Resources() {
     }
@@ -96,12 +96,12 @@ public class Resources implements Serializable {
     }
 
     @XmlTransient
-    public List<Files> getFilesList() {
-        return filesList;
+    public Collection<Files> getFilesCollection() {
+        return filesCollection;
     }
 
-    public void setFilesList(List<Files> filesList) {
-        this.filesList = filesList;
+    public void setFilesCollection(Collection<Files> filesCollection) {
+        this.filesCollection = filesCollection;
     }
 
     @Override

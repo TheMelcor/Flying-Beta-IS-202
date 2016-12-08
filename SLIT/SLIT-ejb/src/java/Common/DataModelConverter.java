@@ -5,10 +5,15 @@
  */
 package Common;
 
+import DataModel.DeliveryDataModel;
+import DataModel.ModuleDataModel;
 import DataModel.UserDataModel;
 import DataModel.UsrRoleDataModel;
+import Database.Handin;
+import Database.Module;
 import Database.User;
 import Database.Usrrole;
+import java.sql.Timestamp;
 
 /**
  *
@@ -62,5 +67,53 @@ public class DataModelConverter {
         return user;
     }
     
+    public static ModuleDataModel convertModuleEntityToModel(Module module){
+        ModuleDataModel moduleModel = new ModuleDataModel();
+        
+        moduleModel.setModuleNr(module.getModuleNr());
+        moduleModel.setModuleName(module.getModuleName());
+        moduleModel.setModuleDesc(module.getModuleDesc());
+        moduleModel.setModuleGoal(module.getModuleGoal());
+        moduleModel.setHandinDate(String.valueOf(module.getHandinDate()));
+        
+        return moduleModel;
+    }
     
+    public static Module convertModuleModelToEntity(ModuleDataModel moduleModel){
+        Module module = new Module();
+        
+        module.setModuleNr(moduleModel.getModuleNr());
+        module.setModuleName(moduleModel.getModuleName());
+        module.setModuleDesc(moduleModel.getModuleDesc());
+        module.setModuleGoal(moduleModel.getModuleGoal());
+        module.setHandinDate(Timestamp.valueOf(moduleModel.getHandinDate()));
+        
+        return module;
+    }
+    
+    public static DeliveryDataModel convertDeliveryEntityToModel(Handin delivery){
+        DeliveryDataModel deliveryModel = new DeliveryDataModel();
+        
+        deliveryModel.setId(delivery.getId());
+        deliveryModel.setModuleNr(convertModuleEntityToModel(delivery.getModuleNr()));
+        deliveryModel.setDeliveredBy(convertUserEntityToModel(delivery.getDeliveredBy()));
+        deliveryModel.setDeliveryDate(String.valueOf(delivery.getDeliveryDate()));
+        deliveryModel.setContent(delivery.getContent());
+        
+        return deliveryModel;
+    }
+    
+    public static Handin convertDeliveryModelToEntity(DeliveryDataModel deliveryModel){
+        Handin delivery = new Handin();
+        
+        delivery.setId(deliveryModel.getId());
+        delivery.setModuleNr(convertModuleModelToEntity(deliveryModel.getModuleNr()));
+        delivery.setDeliveredBy(convertUserModelToEntity(deliveryModel.getDeliveredBy()));
+        delivery.setDeliveryDate(Timestamp.valueOf(deliveryModel.getDeliveryDate()));
+        delivery.setContent(deliveryModel.getContent());
+        
+        return delivery;
+    }
+    
+   
 }

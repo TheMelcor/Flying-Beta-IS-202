@@ -16,12 +16,7 @@ import javax.ejb.Remote;
 @Remote
 public interface DeliverySessionBeanRemote {
     
-    boolean deliverModule(DeliveryDataModel module);
-    
-    DeliveryDataModel getDeliveryById(String id);
-    
-    List<DeliveryDataModel> getAllDeliveries();
-    
-    List<DeliveryDataModel> getAllDeliveriesByUser();
+    public DeliveryDataModel getDeliveryFromId(String id);
+    public List<DeliveryDataModel> getAllDeliveries();
       
 }

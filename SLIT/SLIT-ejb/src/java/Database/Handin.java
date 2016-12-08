@@ -6,12 +6,14 @@
 package Database;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -42,11 +44,10 @@ public class Handin implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 255)
-    @Column(name = "Id", nullable = false, length = 255)
-    private String id;
+    @Column(name = "Id", nullable = false)
+    private Integer id;
     @Basic(optional = false)
     @NotNull
     @Column(name = "DeliveryDate", nullable = false)
@@ -56,7 +57,7 @@ public class Handin implements Serializable {
     @Column(name = "Content", length = 255)
     private String content;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "handin")
-    private List<Evaluation> evaluationList;
+    private Collection<Evaluation> evaluationCollection;
     @JoinColumn(name = "DeliveredBy", referencedColumnName = "UserId", nullable = false)
     @ManyToOne(optional = false)
     private User deliveredBy;
@@ -64,25 +65,25 @@ public class Handin implements Serializable {
     @ManyToOne(optional = false)
     private Module moduleNr;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "handin")
-    private List<Response> responseList;
+    private Collection<Response> responseCollection;
 
     public Handin() {
     }
 
-    public Handin(String id) {
+    public Handin(Integer id) {
         this.id = id;
     }
 
-    public Handin(String id, Date deliveryDate) {
+    public Handin(Integer id, Date deliveryDate) {
         this.id = id;
         this.deliveryDate = deliveryDate;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -103,12 +104,12 @@ public class Handin implements Serializable {
     }
 
     @XmlTransient
-    public List<Evaluation> getEvaluationList() {
-        return evaluationList;
+    public Collection<Evaluation> getEvaluationCollection() {
+        return evaluationCollection;
     }
 
-    public void setEvaluationList(List<Evaluation> evaluationList) {
-        this.evaluationList = evaluationList;
+    public void setEvaluationCollection(Collection<Evaluation> evaluationCollection) {
+        this.evaluationCollection = evaluationCollection;
     }
 
     public User getDeliveredBy() {
@@ -128,12 +129,12 @@ public class Handin implements Serializable {
     }
 
     @XmlTransient
-    public List<Response> getResponseList() {
-        return responseList;
+    public Collection<Response> getResponseCollection() {
+        return responseCollection;
     }
 
-    public void setResponseList(List<Response> responseList) {
-        this.responseList = responseList;
+    public void setResponseCollection(Collection<Response> responseCollection) {
+        this.responseCollection = responseCollection;
     }
 
     @Override

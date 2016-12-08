@@ -9,13 +9,14 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -35,11 +36,10 @@ public class Answer implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 255)
-    @Column(name = "AnswerId", nullable = false, length = 255)
-    private String answerId;
+    @Column(name = "AnswerId", nullable = false)
+    private Integer answerId;
     @Size(max = 255)
     @Column(name = "Answer", length = 255)
     private String answer;
@@ -52,15 +52,15 @@ public class Answer implements Serializable {
     public Answer() {
     }
 
-    public Answer(String answerId) {
+    public Answer(Integer answerId) {
         this.answerId = answerId;
     }
 
-    public String getAnswerId() {
+    public Integer getAnswerId() {
         return answerId;
     }
 
-    public void setAnswerId(String answerId) {
+    public void setAnswerId(Integer answerId) {
         this.answerId = answerId;
     }
 

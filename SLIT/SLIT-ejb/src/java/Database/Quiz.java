@@ -6,11 +6,13 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,7 +20,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -38,11 +39,10 @@ public class Quiz implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 255)
-    @Column(name = "QuizId", nullable = false, length = 255)
-    private String quizId;
+    @Column(name = "QuizId", nullable = false)
+    private Integer quizId;
     @Size(max = 255)
     @Column(name = "QuizName", length = 255)
     private String quizName;
@@ -50,22 +50,22 @@ public class Quiz implements Serializable {
     @ManyToOne
     private Module moduleNr;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "quizId")
-    private List<Question> questionList;
+    private Collection<Question> questionCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "quizId")
-    private List<Quizresults> quizresultsList;
+    private Collection<Quizresults> quizresultsCollection;
 
     public Quiz() {
     }
 
-    public Quiz(String quizId) {
+    public Quiz(Integer quizId) {
         this.quizId = quizId;
     }
 
-    public String getQuizId() {
+    public Integer getQuizId() {
         return quizId;
     }
 
-    public void setQuizId(String quizId) {
+    public void setQuizId(Integer quizId) {
         this.quizId = quizId;
     }
 
@@ -86,21 +86,21 @@ public class Quiz implements Serializable {
     }
 
     @XmlTransient
-    public List<Question> getQuestionList() {
-        return questionList;
+    public Collection<Question> getQuestionCollection() {
+        return questionCollection;
     }
 
-    public void setQuestionList(List<Question> questionList) {
-        this.questionList = questionList;
+    public void setQuestionCollection(Collection<Question> questionCollection) {
+        this.questionCollection = questionCollection;
     }
 
     @XmlTransient
-    public List<Quizresults> getQuizresultsList() {
-        return quizresultsList;
+    public Collection<Quizresults> getQuizresultsCollection() {
+        return quizresultsCollection;
     }
 
-    public void setQuizresultsList(List<Quizresults> quizresultsList) {
-        this.quizresultsList = quizresultsList;
+    public void setQuizresultsCollection(Collection<Quizresults> quizresultsCollection) {
+        this.quizresultsCollection = quizresultsCollection;
     }
 
     @Override

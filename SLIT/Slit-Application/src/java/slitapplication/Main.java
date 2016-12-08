@@ -30,7 +30,7 @@ public class Main {
         
         UserDataModel testUser = new UserDataModel();
         
-        testUser.setEmail("email@1email.email");
+        testUser.setEmail("email@2email.email");
         testUser.setFirstName("Ola");
         testUser.setLastName("Norman");
         testUser.setPassword("password");

@@ -16,5 +16,11 @@ import javax.ejb.Remote;
 @Remote
 public interface ModuleSessionBeanRemote {
     
+    
+    public ModuleDataModel getModuleFromNr(int moduleNr);
+    
+    public List<ModuleDataModel> getAllModules();
+    
+    public void saveModule(ModuleDataModel module);
 
 }

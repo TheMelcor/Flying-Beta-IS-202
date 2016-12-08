@@ -10,6 +10,8 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -38,11 +40,10 @@ public class Response implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 255)
-    @Column(name = "RespId", nullable = false, length = 255)
-    private String respId;
+    @Column(name = "RespId", nullable = false)
+    private Integer respId;
     @Size(max = 255)
     @Column(name = "RespComment", length = 255)
     private String respComment;
@@ -61,20 +62,20 @@ public class Response implements Serializable {
     public Response() {
     }
 
-    public Response(String respId) {
+    public Response(Integer respId) {
         this.respId = respId;
     }
 
-    public Response(String respId, Date respDate) {
+    public Response(Integer respId, Date respDate) {
         this.respId = respId;
         this.respDate = respDate;
     }
 
-    public String getRespId() {
+    public Integer getRespId() {
         return respId;
     }
 
-    public void setRespId(String respId) {
+    public void setRespId(Integer respId) {
         this.respId = respId;
     }
 
