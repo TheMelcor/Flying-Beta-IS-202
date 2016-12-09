@@ -8,12 +8,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="UserInterface.Controllers.MainViewController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.Controllers.MainViewController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <TreeView layoutX="200.0" layoutY="87.0" prefHeight="200.0" prefWidth="200.0" />
             <MenuBar prefHeight="29.0" prefWidth="600.0">
               <menus>
                 <Menu mnemonicParsing="false" text="Modules">
@@ -22,7 +20,7 @@
                         <MenuItem mnemonicParsing="false" text="Module 2" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="My Plan">
+                <Menu mnemonicParsing="false" text="My Hand Ins">
                   <items>
                     <MenuItem mnemonicParsing="false" text="Delete" />
                   </items>
@@ -34,10 +32,11 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <Label layoutX="252.0" layoutY="109.0" text="Today Module 1" />
-            <Label layoutX="236.0" layoutY="126.0" text="Due date 13.09.2016" />
-            <Button layoutX="253.0" layoutY="173.0" mnemonicParsing="false" text="Choose files" />
-            <Button layoutX="269.0" layoutY="229.0" mnemonicParsing="false" text="Submit" />
+            <Label id="mandatoryLabel" layoutX="268.0" layoutY="109.0" text="Label" />
+            <Label id="duedateLabel" layoutX="268.0" layoutY="126.0" text="Label" />
+            <Button id="ChooseFileButton" layoutX="253.0" layoutY="281.0" mnemonicParsing="false" text="Choose files" />
+            <Button id="SubmitButton" layoutX="270.0" layoutY="330.0" mnemonicParsing="false" text="Submit" />
+            <TextArea id="delverycontenttextfile" layoutX="191.0" layoutY="163.0" prefHeight="106.0" prefWidth="217.0" />
          </children>
       </Pane>
    </children>

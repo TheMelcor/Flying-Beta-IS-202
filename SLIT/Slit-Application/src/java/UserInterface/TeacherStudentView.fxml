@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <MenuBar prefHeight="20.0" prefWidth="600.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Modules">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Students">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <TableView layoutY="29.0" prefHeight="372.0" prefWidth="150.0">
+              <columns>
+                <TableColumn prefWidth="149.0" text="Students" />
+              </columns>
+            </TableView>
+            <Label layoutX="263.0" layoutY="98.0" text="Add an user" />
+            <TextField id="UserNameField" layoutX="217.0" layoutY="115.0" />
+            <ComboBox id="UserRolePicker" layoutX="225.0" layoutY="148.0" prefWidth="150.0" />
+            <Button id="AddUserButton" layoutX="271.0" layoutY="187.0" mnemonicParsing="false" text="Add" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

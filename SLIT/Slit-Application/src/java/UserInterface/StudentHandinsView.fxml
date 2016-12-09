@@ -6,37 +6,38 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
             <MenuBar prefHeight="29.0" prefWidth="600.0">
               <menus>
-                <Menu mnemonicParsing="false" text="Module">
+                <Menu mnemonicParsing="false" text="Modules">
                   <items>
                     <MenuItem mnemonicParsing="false" text="Close" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="My Handins">
+                <Menu mnemonicParsing="false" text="My Hand Ins">
                   <items>
                     <MenuItem mnemonicParsing="false" text="Delete" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Status">
+                <Menu mnemonicParsing="false" text="Help">
                   <items>
                     <MenuItem mnemonicParsing="false" text="About" />
                   </items>
                 </Menu>
               </menus>
             </MenuBar>
-            <TableView layoutY="29.0" prefHeight="370.0" prefWidth="600.0">
+            <TableView layoutY="29.0" prefHeight="371.0" prefWidth="224.0">
               <columns>
-                <TableColumn prefWidth="109.0" text="Module nr, date" />
-                <TableColumn minWidth="0.0" prefWidth="109.0" text="Module nr, date" />
-                  <TableColumn minWidth="2.0" prefWidth="105.0" text="Module nr, date" />
+                <TableColumn prefWidth="75.0" text="Hand In nr" />
+                <TableColumn prefWidth="75.0" text="Hand In nr" />
+                  <TableColumn prefWidth="75.0" text="Hand In nr" />
               </columns>
             </TableView>
+            <Label id="HandinstatusLabel" layoutX="365.0" layoutY="143.0" text="Label" />
+            <Label id="handinLabel" layoutX="365.0" layoutY="126.0" text="Label" />
          </children>
       </Pane>
    </children>

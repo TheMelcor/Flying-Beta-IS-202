@@ -9,16 +9,16 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
    <children>
-      <Pane prefHeight="400.0" prefWidth="600.0">
+      <Pane layoutY="2.0" prefHeight="400.0" prefWidth="600.0">
          <children>
             <MenuBar prefHeight="29.0" prefWidth="600.0">
               <menus>
-                <Menu mnemonicParsing="false" text="Module">
+                <Menu mnemonicParsing="false" text="Modules">
                   <items>
                     <MenuItem mnemonicParsing="false" text="Close" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="My Handins">
+                <Menu mnemonicParsing="false" text="My Hand Ins">
                   <items>
                     <MenuItem mnemonicParsing="false" text="Delete" />
                   </items>
@@ -30,13 +30,9 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <TableView layoutY="29.0" prefHeight="370.0" prefWidth="600.0">
-              <columns>
-                <TableColumn prefWidth="109.0" text="Module nr, date" />
-                <TableColumn minWidth="0.0" prefWidth="109.0" text="Module nr, date" />
-                  <TableColumn minWidth="2.0" prefWidth="105.0" text="Module nr, date" />
-              </columns>
-            </TableView>
+            <Label id="ModuleNameLabel" layoutX="283.0" layoutY="100.0" prefHeight="29.0" prefWidth="34.0" text="Label" />
+            <Label id="ModuleInfoLabel" layoutX="283.0" layoutY="139.0" text="Label" />
+            <Button id="GoSubButton" layoutX="252.0" layoutY="173.0" mnemonicParsing="false" text="Go to submit" />
          </children>
       </Pane>
    </children>
