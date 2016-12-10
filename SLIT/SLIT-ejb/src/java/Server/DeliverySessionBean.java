@@ -95,4 +95,16 @@ public class DeliverySessionBean implements DeliverySessionBeanRemote {
         }
         return moduleDeliveries;
     }
+    
+    @Override
+    public void saveDelivery(DeliveryDataModel delivery){
+        try{
+            Handin deliveryEntity = DataModelConverter.convertDeliveryModelToEntity(delivery);
+            
+            em.persist(deliveryEntity);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

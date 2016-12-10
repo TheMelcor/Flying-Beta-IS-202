@@ -39,8 +39,7 @@ public class StudentMainViewController implements Initializable {
     private TableColumn<ModuleDataModel, String> moduleDate;
     @FXML
     private TableColumn<ModuleDataModel, String> moduleStatus;
-    @FXML
-    private TableColumn<ModuleDataModel, String> buttonColumn;
+
     
     private ModuleHandler moduleHandler = new ModuleHandler();
 

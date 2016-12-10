@@ -63,6 +63,10 @@ public class DeliveryDataModel implements java.io.Serializable{
         return moduleNr;
     }
     
+    public int getActualModuleNr(){
+        return getModuleNr().getModuleNr();
+    }
+    
     public void setModuleNr(ModuleDataModel moduleNr){
         this.moduleNr = moduleNr;
     }

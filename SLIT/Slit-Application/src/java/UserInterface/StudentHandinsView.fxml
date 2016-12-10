@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.Controllers.StudentHandinsViewController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -29,15 +29,13 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <TableView layoutY="29.0" prefHeight="371.0" prefWidth="224.0">
+            <TableView fx:id="deliveryTable" layoutY="29.0" onMouseClicked="#onMouseClickedTable" prefHeight="371.0" prefWidth="600.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="Hand In nr" />
-                <TableColumn prefWidth="75.0" text="Hand In nr" />
-                  <TableColumn prefWidth="75.0" text="Hand In nr" />
+                <TableColumn fx:id="actualModuleNr" prefWidth="224.0" text="Modul Nr" />
+                <TableColumn fx:id="moduleDate" prefWidth="192.0" text="Delivery Date" />
+                  <TableColumn fx:id="moduleStatus" prefWidth="183.0" text="Status" />
               </columns>
             </TableView>
-            <Label id="HandinstatusLabel" layoutX="365.0" layoutY="143.0" text="Label" />
-            <Label id="handinLabel" layoutX="365.0" layoutY="126.0" text="Label" />
          </children>
       </Pane>
    </children>

@@ -5,9 +5,15 @@
  */
 package UserInterface.Controllers;
 
+import DataModel.DeliveryDataModel;
 import DataModel.ModuleDataModel;
+import Framework.DeliveryHandler;
 import Framework.ModuleHandler;
+import Framework.UserHandler;
+import UserInterface.MainUserInterface;
+import UserInterface.Names.ViewNames;
 import java.net.URL;
+import java.sql.Timestamp;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,6 +39,8 @@ public class SubmitMainViewController implements Initializable {
     private Button submitButton;
     @FXML
     private TextArea deliveryTextArea;
+    
+    private DeliveryHandler deliveryHandler = new DeliveryHandler();
 
     /**
      * Initializes the controller class.
@@ -46,7 +54,18 @@ public class SubmitMainViewController implements Initializable {
     }    
 
     @FXML
-    private void onClickSubmitDelivery(ActionEvent event) {
+    private void onClickSubmitDelivery(ActionEvent event) throws Exception{
+        DeliveryDataModel delivery = new DeliveryDataModel();
+        delivery.setDeliveredBy(UserHandler.getLoggedInUser());
+        delivery.setModuleNr(ModuleHandler.getSelectedModule());
+        delivery.setContent(deliveryTextArea.getText());
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        delivery.setDeliveryDate(String.valueOf(timestamp));
+        deliveryHandler.saveDelivery(delivery);
+        DeliveryHandler.setSelectedDelivery(delivery);
+        
+        // Set to studentHandinView when that is fixed...
+        MainUserInterface.getInstance().setScene(ViewNames.studentHandinView);
     }
     
 }

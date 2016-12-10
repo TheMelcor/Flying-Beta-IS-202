@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.Controllers.StudentHandinViewController">
+   <children>
+      <SplitPane dividerPositions="0.135678391959799" layoutX="-2.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <HBox layoutY="-4.0" prefHeight="57.0" prefWidth="600.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Text fx:id="commentText" layoutX="383.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment field" wrappingWidth="192.33935546875" />
+                  <Text fx:id="contentText" layoutX="43.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ContentField" />
+                  <Label fx:id="moduleNrLabel" alignment="CENTER" layoutX="-1.0" layoutY="24.0" prefHeight="18.0" prefWidth="600.0" text="Module Nr">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="writtenByLabel" layoutX="383.0" layoutY="239.0" prefHeight="14.0" prefWidth="213.0" text="Written By:" />
+                  <Label fx:id="gradeLabel" layoutX="383.0" layoutY="278.0" text="Grade: " />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
