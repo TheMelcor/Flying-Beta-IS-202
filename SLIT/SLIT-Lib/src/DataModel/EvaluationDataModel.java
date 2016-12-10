@@ -10,13 +10,17 @@ package DataModel;
  * @author Melcor
  */
 public class EvaluationDataModel implements java.io.Serializable{
-    private String evaluationId;
+    private int evaluationId;
     private String date;
     private String evaluation;
-    private String evaluatedBy;
-    private String handin;
+    private UserDataModel evaluatedBy;
+    private DeliveryDataModel handin;
+    
+    public EvaluationDataModel(){
+        
+    }
 
-    public EvaluationDataModel(String evaluationId, String date, String evaluation, String evaluatedBy, String handin) {
+    public EvaluationDataModel(int evaluationId, String date, String evaluation, UserDataModel evaluatedBy, DeliveryDataModel handin) {
         this.evaluationId = evaluationId;
         this.date = date;
         this.evaluation = evaluation;
@@ -24,11 +28,11 @@ public class EvaluationDataModel implements java.io.Serializable{
         this.handin = handin;
     }
     
-    public String getEvaluationId() {
+    public int getEvaluationId() {
         return evaluationId;
     }
 
-    public void setEvaluationId(String evaluationId) {
+    public void setEvaluationId(int evaluationId) {
         this.evaluationId = evaluationId;
     }
 
@@ -48,19 +52,19 @@ public class EvaluationDataModel implements java.io.Serializable{
         this.evaluation = evaluation;
     }
 
-    public String getEvaluatedBy() {
+    public UserDataModel getEvaluatedBy() {
         return evaluatedBy;
     }
 
-    public void setEvaluatedBy(String evaluatedBy) {
+    public void setEvaluatedBy(UserDataModel evaluatedBy) {
         this.evaluatedBy = evaluatedBy;
     }
 
-    public String getHandin() {
+    public DeliveryDataModel getHandin() {
         return handin;
     }
 
-    public void setHandin(String handin) {
+    public void setHandin(DeliveryDataModel handin) {
         this.handin = handin;
     }
     

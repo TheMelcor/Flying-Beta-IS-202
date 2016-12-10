@@ -6,10 +6,12 @@
 package Common;
 
 import DataModel.DeliveryDataModel;
+import DataModel.EvaluationDataModel;
 import DataModel.ModuleDataModel;
 import DataModel.ResponseDataModel;
 import DataModel.UserDataModel;
 import DataModel.UsrRoleDataModel;
+import Database.Evaluation;
 import Database.Handin;
 import Database.Module;
 import Database.Response;
@@ -127,6 +129,42 @@ public class DataModelConverter {
         responseModel.setDate(String.valueOf(response.getRespDate()));
         
         return responseModel;
+    }
+    
+    public static Response convertResponseModelToEntity(ResponseDataModel responseModel){
+        Response response = new Response();
+        
+        response.setRespId(responseModel.getResponseId());
+        response.setWrittenBy(convertUserModelToEntity(responseModel.getAuthor()));
+        response.setHandin(convertDeliveryModelToEntity(responseModel.getDeliveryId()));
+        response.setRespComment(responseModel.getComment());
+        response.setRespDate(Timestamp.valueOf(responseModel.getDate()));
+        
+        return response;
+    }
+    
+    public static EvaluationDataModel convertEvaluationEntityToModel(Evaluation evaluation){
+        EvaluationDataModel evaluationModel = new EvaluationDataModel();
+        
+        evaluationModel.setEvaluationId(evaluation.getEvalId());
+        evaluationModel.setEvaluation(evaluation.getEvaluation());
+        evaluationModel.setDate(String.valueOf(evaluation.getEvalDate()));
+        evaluationModel.setEvaluatedBy(convertUserEntityToModel(evaluation.getEvaluatedBy()));
+        evaluationModel.setHandin(convertDeliveryEntityToModel(evaluation.getHandin()));
+        
+        return evaluationModel;
+    }
+    
+    public static Evaluation convertEvaluationModelToEntity(EvaluationDataModel evaluationModel){
+        Evaluation evaluation = new Evaluation();
+        
+        evaluation.setEvalId(evaluationModel.getEvaluationId());
+        evaluation.setEvalDate(Timestamp.valueOf(evaluationModel.getDate()));
+        evaluation.setEvaluation(evaluationModel.getEvaluation());
+        evaluation.setEvaluatedBy(convertUserModelToEntity(evaluationModel.getEvaluatedBy()));
+        evaluation.setHandin(convertDeliveryModelToEntity(evaluationModel.getHandin()));
+        
+        return evaluation;
     }
     
    

@@ -51,7 +51,13 @@ public class LoginViewController implements Initializable {
         
         if (userModel.getEmail() != null){
             this.infoBarLabel.setText("Login Success!");
-            MainUserInterface.getInstance().setScene(ViewNames.mainView);
+            if(userModel.getUserRole().getRoleName().equals("Teacher")){
+                MainUserInterface.getInstance().setScene(ViewNames.teacherView);
+            }
+            else{
+                MainUserInterface.getInstance().setScene(ViewNames.studentMainView);
+            }
+            
         }
         else {
             this.infoBarLabel.setText("Login Failed, u knob.");

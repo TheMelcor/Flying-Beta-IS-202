@@ -6,7 +6,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
@@ -30,10 +29,13 @@
                 <TableColumn prefWidth="149.0" text="Students" />
               </columns>
             </TableView>
-            <Label layoutX="263.0" layoutY="98.0" text="Add an user" />
-            <TextField id="UserNameField" layoutX="217.0" layoutY="115.0" />
-            <ComboBox id="UserRolePicker" layoutX="225.0" layoutY="148.0" prefWidth="150.0" />
-            <Button id="AddUserButton" layoutX="271.0" layoutY="187.0" mnemonicParsing="false" text="Add" />
+            <Label layoutX="258.0" layoutY="29.0" text="Add an user" />
+            <TextField id="FirstNameField" layoutX="221.0" layoutY="51.0" promptText="First Name" />
+            <ComboBox id="UserRolePicker" layoutX="231.0" layoutY="147.0" prefHeight="22.0" prefWidth="114.0" promptText="User role" />
+            <Button id="AddUserButton" layoutX="270.0" layoutY="189.0" mnemonicParsing="false" text="Add" />
+            <TextField id="LastNameField" layoutX="221.0" layoutY="73.0" promptText="Last Name" />
+            <TextField id="EmailTextField" layoutX="221.0" layoutY="95.0" promptText="Email" />
+            <TextField id="PasswordTextField" layoutX="221.0" layoutY="117.0" promptText="Password" />
          </children>
       </Pane>
    </children>

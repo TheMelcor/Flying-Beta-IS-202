@@ -5,6 +5,7 @@
  */
 package Server;
 
+import DataModel.DeliveryDataModel;
 import DataModel.ResponseDataModel;
 import java.util.List;
 import javax.ejb.Remote;
@@ -17,4 +18,7 @@ import javax.ejb.Remote;
 public interface ResponseSessionBeanRemote {
 
     ResponseDataModel getResponseById(int id);
+    List<ResponseDataModel> getAllResponses();
+    List<ResponseDataModel> getResponsesByDelivery(DeliveryDataModel delivery);
+    void saveResponse(ResponseDataModel response);
 }

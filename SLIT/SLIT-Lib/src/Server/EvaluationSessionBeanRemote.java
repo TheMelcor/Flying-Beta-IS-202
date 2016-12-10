@@ -5,7 +5,9 @@
  */
 package Server;
 
+import DataModel.DeliveryDataModel;
 import DataModel.EvaluationDataModel;
+import DataModel.UserDataModel;
 import java.util.List;
 import javax.ejb.Remote;
 
@@ -15,13 +17,9 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface EvaluationSessionBeanRemote {
-    boolean addEvaluation(EvaluationDataModel evaluation);
-    
-    EvaluationDataModel getEvaluationById(String id);
-    
-    EvaluationDataModel getEvaluationFromDelivery(String delivery);
-    
+    EvaluationDataModel getEvaluationById(int id);
     List<EvaluationDataModel> getAllEvaluations();
-    
-    List<EvaluationDataModel> getAllEvaluationsByUser(String userId);
+    List<EvaluationDataModel> getEvaluationsByUser(UserDataModel user);
+    EvaluationDataModel getEvaluationByDelivery(DeliveryDataModel delivery);
+    void saveEvaluation(EvaluationDataModel evaluation);
 }

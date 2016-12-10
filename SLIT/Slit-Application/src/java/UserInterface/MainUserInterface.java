@@ -27,8 +27,15 @@ public class MainUserInterface extends Application {
     private HashMap<String, String> views = new HashMap<String, String>()
     {
         {
-            put(ViewNames.mainView , "MainView.fxml");
+            put(ViewNames.studentMainView , "StudentMainView.fxml");
             put(ViewNames.loginView, "LoginView.fxml"); 
+            put(ViewNames.studentHandinsView, "StudentHandinsView.fxml");
+            put(ViewNames.studentModuleInfoView, "StudentModuleInfoView.fxml");
+            put(ViewNames.submitMainView, "SubmitMainView");
+            put(ViewNames.teacherCreateView, "TeacherCreateView.fxml");
+            put(ViewNames.teacherEvaluationView, "TeacherEvaluationView.fxml");
+            put(ViewNames.teacherStudentView, "TeacherStudentView.fxml");
+            put(ViewNames.teacherView, "TeacherView.fxml");
         }
         
     }; 
@@ -69,12 +76,7 @@ public class MainUserInterface extends Application {
             throw new Exception("Value does not exist"); 
     }
     
-    /**
-     * Base on : http://stackoverflow.com/questions/13003323/javafx-how-to-change-stage
-     * @param fxml
-     * @return
-     * @throws Exception 
-     */
+
     private Parent replaceSceneContent(String fxml) throws Exception {
         Parent page = (Parent) FXMLLoader.load(MainUserInterface.class.getResource(fxml), null, new JavaFXBuilderFactory());
         Scene scene = stage.getScene();
