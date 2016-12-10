@@ -103,6 +103,7 @@ public class DataModelConverter {
         deliveryModel.setDeliveredBy(convertUserEntityToModel(delivery.getDeliveredBy()));
         deliveryModel.setDeliveryDate(String.valueOf(delivery.getDeliveryDate()));
         deliveryModel.setContent(delivery.getContent());
+        deliveryModel.setDeliveryStatus(delivery.getDeliveryStatus());
         
         return deliveryModel;
     }
@@ -115,6 +116,7 @@ public class DataModelConverter {
         delivery.setDeliveredBy(convertUserModelToEntity(deliveryModel.getDeliveredBy()));
         delivery.setDeliveryDate(Timestamp.valueOf(deliveryModel.getDeliveryDate()));
         delivery.setContent(deliveryModel.getContent());
+        delivery.setDeliveryStatus(deliveryModel.getDeliveryStatus());
         
         return delivery;
     }

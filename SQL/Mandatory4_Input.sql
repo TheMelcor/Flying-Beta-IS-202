@@ -1,4 +1,4 @@
-handinINSERT INTO UsrRole VALUES (
+INSERT INTO UsrRole VALUES (
 0,
 'Teacher'
 );
@@ -86,6 +86,7 @@ INSERT INTO Handin VALUES (
 NULL,
 '2016-11-17 15:40:43',
 3,
+NULL,
 'I denne modulen har jeg lært å bruke bluej til å programmere i java, se vedlagt video fil.',
 1
 );
@@ -94,6 +95,7 @@ INSERT INTO Handin VALUES (
 NULL,
 '2016-11-15 15:30:09',
 4,
+NULL,
 'I denne modulen har jeg lært java.',
 1
 );
@@ -102,6 +104,7 @@ INSERT INTO Handin VALUES (
 NULL,
 '2016-11-20 12:21:23',
 3,
+NULL,
 'I denne modulen har jeg lært om klasser og metoder.',
 2
 );

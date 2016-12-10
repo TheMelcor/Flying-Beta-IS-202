@@ -37,6 +37,7 @@ CREATE TABLE Handin
 Id int NOT NULL AUTO_INCREMENT,
 DeliveryDate TimeStamp,
 DeliveredBy int NOT NULL,
+DeliveryStatus varchar(55) DEFAULT 'Not Evaluated',
 Content varchar(255),
 ModuleNr Int(10) NOT NULL,
 PRIMARY KEY (Id),

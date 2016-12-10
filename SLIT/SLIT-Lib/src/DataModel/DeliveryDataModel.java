@@ -15,6 +15,7 @@ public class DeliveryDataModel implements java.io.Serializable{
     private String deliveryDate;
     private String content;
     private ModuleDataModel moduleNr;
+    private String deliveryStatus;
     
     public DeliveryDataModel(){
         
@@ -69,5 +70,13 @@ public class DeliveryDataModel implements java.io.Serializable{
     
     public void setModuleNr(ModuleDataModel moduleNr){
         this.moduleNr = moduleNr;
+    }
+    
+    public String getDeliveryStatus(){
+        return this.deliveryStatus;
+    }
+    
+    public void setDeliveryStatus(String status){
+        this.deliveryStatus = status;
     }
 }

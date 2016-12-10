@@ -32,8 +32,8 @@
             <TableView fx:id="deliveryTable" layoutY="29.0" onMouseClicked="#onMouseClickedTable" prefHeight="371.0" prefWidth="600.0">
               <columns>
                 <TableColumn fx:id="actualModuleNr" prefWidth="224.0" text="Modul Nr" />
-                <TableColumn fx:id="moduleDate" prefWidth="192.0" text="Delivery Date" />
-                  <TableColumn fx:id="moduleStatus" prefWidth="183.0" text="Status" />
+                <TableColumn fx:id="deliveryDate" prefWidth="192.0" text="Delivery Date" />
+                  <TableColumn fx:id="deliveryStatus" prefWidth="183.0" text="Status" />
               </columns>
             </TableView>
          </children>

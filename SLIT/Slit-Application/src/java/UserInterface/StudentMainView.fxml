@@ -10,33 +10,16 @@
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <MenuBar prefHeight="29.0" prefWidth="600.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="Module">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="My Handins">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Status">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
             <TableView fx:id="moduleTable" layoutY="29.0" onMouseClicked="#onClickTableRow" prefHeight="370.0" prefWidth="600.0">
               <columns>
-                <TableColumn fx:id="moduleNr" prefWidth="109.0" text="Module nr" />
-                <TableColumn fx:id="moduleName" minWidth="0.0" prefWidth="163.0" text="Name" />
-                  <TableColumn fx:id="moduleDate" minWidth="2.0" prefWidth="175.0" text="Date" />
-                  <TableColumn fx:id="moduleStatus" prefWidth="151.0" text="Status" />
+                <TableColumn fx:id="moduleNr" prefWidth="88.0" text="Module nr" />
+                <TableColumn fx:id="moduleName" minWidth="0.0" prefWidth="294.0" text="Name" />
+                  <TableColumn fx:id="moduleDate" minWidth="2.0" prefWidth="217.0" text="Date" />
               </columns>
             </TableView>
+            <Button fx:id="moduleButton" layoutY="-2.0" mnemonicParsing="false" onAction="#onClickModuleButton" prefHeight="31.0" prefWidth="90.0" text="Modules" />
+            <Button fx:id="deliveriesButton" layoutX="90.0" layoutY="-2.0" mnemonicParsing="false" onAction="#onClickDeliveriesButton" prefHeight="31.0" prefWidth="90.0" text="My Deliveries" />
+            <Button fx:id="logOutButton" layoutX="510.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickLogOutButton" prefHeight="31.0" prefWidth="90.0" text="Log Out" />
          </children>
       </Pane>
    </children>

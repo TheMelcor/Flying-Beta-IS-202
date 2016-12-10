@@ -48,7 +48,7 @@ public class UserHandler {
         return user;
     }
     
-    public void logOutUser(){
+    public static void logOutUser(){
         UserHandler.loggedInUser = null;
     }
     

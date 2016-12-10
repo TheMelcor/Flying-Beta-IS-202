@@ -39,6 +39,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Handin.findAll", query = "SELECT h FROM Handin h"),
     @NamedQuery(name = "Handin.findById", query = "SELECT h FROM Handin h WHERE h.id = :id"),
     @NamedQuery(name = "Handin.findByDeliveryDate", query = "SELECT h FROM Handin h WHERE h.deliveryDate = :deliveryDate"),
+    @NamedQuery(name = "Handin.findByDeliveryStatus", query = "SELECT h FROM Handin h WHERE h.deliveryStatus = :deliveryStatus"),
     @NamedQuery(name = "Handin.findByContent", query = "SELECT h FROM Handin h WHERE h.content = :content")})
 public class Handin implements Serializable {
 
@@ -53,6 +54,9 @@ public class Handin implements Serializable {
     @Column(name = "DeliveryDate", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date deliveryDate;
+    @Size(max = 55)
+    @Column(name = "DeliveryStatus", length = 55)
+    private String deliveryStatus;
     @Size(max = 255)
     @Column(name = "Content", length = 255)
     private String content;
@@ -93,6 +97,14 @@ public class Handin implements Serializable {
 
     public void setDeliveryDate(Date deliveryDate) {
         this.deliveryDate = deliveryDate;
+    }
+
+    public String getDeliveryStatus() {
+        return deliveryStatus;
+    }
+
+    public void setDeliveryStatus(String deliveryStatus) {
+        this.deliveryStatus = deliveryStatus;
     }
 
     public String getContent() {

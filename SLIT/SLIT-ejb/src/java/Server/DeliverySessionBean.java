@@ -100,8 +100,9 @@ public class DeliverySessionBean implements DeliverySessionBeanRemote {
     public void saveDelivery(DeliveryDataModel delivery){
         try{
             Handin deliveryEntity = DataModelConverter.convertDeliveryModelToEntity(delivery);
-            
+            em.getTransaction().begin();
             em.persist(deliveryEntity);
+            em.getTransaction().commit();
         }
         catch (Exception e){
             e.printStackTrace();
