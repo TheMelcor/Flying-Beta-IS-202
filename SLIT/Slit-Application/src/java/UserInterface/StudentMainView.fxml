@@ -6,8 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.Controllers.StudentMainViewController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -30,11 +29,11 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <TableView layoutY="29.0" prefHeight="370.0" prefWidth="600.0">
+            <TableView fx:id="moduleTable" layoutY="29.0" prefHeight="370.0" prefWidth="600.0">
               <columns>
-                <TableColumn prefWidth="109.0" text="Module nr, date" />
-                <TableColumn minWidth="0.0" prefWidth="109.0" text="Module nr, date" />
-                  <TableColumn minWidth="2.0" prefWidth="105.0" text="Module nr, date" />
+                <TableColumn fx:id="moduleNr" prefWidth="109.0" text="Module nr" />
+                <TableColumn fx:id="moduleName" minWidth="0.0" prefWidth="109.0" text="Name" />
+                  <TableColumn fx:id="moduleDate" minWidth="2.0" prefWidth="105.0" text="Date" />
               </columns>
             </TableView>
          </children>
