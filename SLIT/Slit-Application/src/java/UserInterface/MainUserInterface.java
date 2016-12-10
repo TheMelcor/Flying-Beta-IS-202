@@ -20,7 +20,7 @@ import javafx.stage.Stage;
  */
 public class MainUserInterface extends Application {
     
-    private Stage stage; 
+    private Stage stage;
     
     private static MainUserInterface instance; 
     
@@ -31,7 +31,7 @@ public class MainUserInterface extends Application {
             put(ViewNames.loginView, "LoginView.fxml"); 
             put(ViewNames.studentHandinsView, "StudentHandinsView.fxml");
             put(ViewNames.studentModuleInfoView, "StudentModuleInfoView.fxml");
-            put(ViewNames.submitMainView, "SubmitMainView");
+            put(ViewNames.submitMainView, "SubmitMainView.fxml");
             put(ViewNames.teacherCreateView, "TeacherCreateView.fxml");
             put(ViewNames.teacherEvaluationView, "TeacherEvaluationView.fxml");
             put(ViewNames.teacherStudentView, "TeacherStudentView.fxml");
@@ -90,6 +90,7 @@ public class MainUserInterface extends Application {
         stage.sizeToScene();
         return page;
     }
+    
 
     /**
      * @param args the command line arguments

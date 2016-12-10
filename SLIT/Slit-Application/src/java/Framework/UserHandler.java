@@ -19,6 +19,12 @@ import javax.naming.NamingException;
  * @author Melcor
  */
 public class UserHandler {
+    
+    private static UserDataModel loggedInUser;
+    
+    public static UserDataModel getLoggedInUser(){
+        return UserHandler.loggedInUser;
+    }
 
     private UserSessionBeanRemote lookupUserSessionBeanRemote() {
         try {
@@ -36,7 +42,14 @@ public class UserHandler {
     }
     
     public UserDataModel loginUser(String email, String password){
-        return this.lookupUserSessionBeanRemote().loginUser(email, password);
+        UserDataModel user = this.lookupUserSessionBeanRemote().loginUser(email, password);
+        
+        UserHandler.loggedInUser = user;
+        return user;
+    }
+    
+    public void logOutUser(){
+        UserHandler.loggedInUser = null;
     }
     
     public List<UserDataModel> getAllUsers(){

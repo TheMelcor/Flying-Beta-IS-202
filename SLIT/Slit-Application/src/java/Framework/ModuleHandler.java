@@ -19,6 +19,20 @@ import javax.naming.NamingException;
  * @author Melcor
  */
 public class ModuleHandler {
+    
+    private static ModuleDataModel selectedModule;
+    
+    public static ModuleDataModel getSelectedModule(){
+        return ModuleHandler.selectedModule;
+    }
+    
+    public static void setSelectedModule(ModuleDataModel module){
+        ModuleHandler.selectedModule = module;
+    }
+    
+    public static void clearSelectedModule(){
+        ModuleHandler.selectedModule = null;
+    }
 
     private ModuleSessionBeanRemote lookupModuleSessionBeanRemote() {
         try {

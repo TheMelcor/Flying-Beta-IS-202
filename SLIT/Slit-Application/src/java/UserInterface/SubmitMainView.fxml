@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.Controllers.MainViewController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.Controllers.SubmitMainViewController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -32,11 +32,14 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <Label id="mandatoryLabel" layoutX="268.0" layoutY="109.0" text="Label" />
-            <Label id="duedateLabel" layoutX="268.0" layoutY="126.0" text="Label" />
-            <Button id="ChooseFileButton" layoutX="253.0" layoutY="281.0" mnemonicParsing="false" text="Choose files" />
-            <Button id="SubmitButton" layoutX="270.0" layoutY="330.0" mnemonicParsing="false" text="Submit" />
-            <TextArea id="delverycontenttextfile" layoutX="191.0" layoutY="163.0" prefHeight="106.0" prefWidth="217.0" />
+            <Label id="mandatoryLabel" fx:id="moduleNameLabel" alignment="CENTER" layoutX="1.0" layoutY="61.0" prefHeight="14.0" prefWidth="600.0" text="Label">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label id="duedateLabel" fx:id="moduleDateLabel" alignment="CENTER" layoutX="1.0" layoutY="126.0" prefHeight="14.0" prefWidth="600.0" text="Label" />
+            <Button id="ChooseFileButton" fx:id="chooseFileButton" layoutX="264.0" layoutY="281.0" mnemonicParsing="false" text="Choose files" />
+            <Button id="SubmitButton" fx:id="submitButton" layoutX="276.0" layoutY="330.0" mnemonicParsing="false" onAction="#onClickSubmitDelivery" text="Submit" />
+            <TextArea id="delverycontenttextfile" fx:id="deliveryTextArea" layoutX="193.0" layoutY="162.0" prefHeight="106.0" prefWidth="217.0" />
          </children>
       </Pane>
    </children>

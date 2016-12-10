@@ -7,6 +7,8 @@ package UserInterface.Controllers;
 
 import DataModel.ModuleDataModel;
 import Framework.ModuleHandler;
+import UserInterface.MainUserInterface;
+import UserInterface.Names.ViewNames;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -14,39 +16,43 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
  *
  * @author Melcor
  */
-public class SubmitMainViewController implements Initializable {
+public class StudentModuleInfoViewController implements Initializable {
 
     @FXML
     private Label moduleNameLabel;
     @FXML
+    private Text moduleInfoLabel;
+    @FXML
+    private Button goToSubmitButton;
+    @FXML
+    private Text moduleGoalLabel;
+    @FXML
     private Label moduleDateLabel;
-    @FXML
-    private Button chooseFileButton;
-    @FXML
-    private Button submitButton;
-    @FXML
-    private TextArea deliveryTextArea;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        // TODO
         ModuleDataModel module = ModuleHandler.getSelectedModule();
         
         moduleNameLabel.setText(module.getModuleName());
+        moduleInfoLabel.setText(module.getModuleDesc());
+        moduleGoalLabel.setText(module.getModuleGoal());
         moduleDateLabel.setText(module.getHandinDate());
     }    
 
     @FXML
-    private void onClickSubmitDelivery(ActionEvent event) {
+    private void onClickSubmitButton(ActionEvent event) throws Exception{
+        MainUserInterface.getInstance().setScene(ViewNames.submitMainView);
     }
     
 }

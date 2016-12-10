@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.Controllers.StudentModuleInfoViewController">
    <children>
       <Pane layoutY="2.0" prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -30,9 +30,24 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <Label id="ModuleNameLabel" layoutX="283.0" layoutY="100.0" prefHeight="29.0" prefWidth="34.0" text="Label" />
-            <Label id="ModuleInfoLabel" layoutX="283.0" layoutY="139.0" text="Label" />
-            <Button id="GoSubButton" layoutX="252.0" layoutY="173.0" mnemonicParsing="false" text="Go to submit" />
+            <Label id="ModuleNameLabel" fx:id="moduleNameLabel" alignment="CENTER" layoutX="-1.0" layoutY="44.0" prefHeight="29.0" prefWidth="600.0" text="Label">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Button id="GoSubButton" fx:id="goToSubmitButton" layoutX="262.0" layoutY="341.0" mnemonicParsing="false" onAction="#onClickSubmitButton" text="Go to submit" />
+            <Label fx:id="moduleDateLabel" alignment="CENTER" layoutX="1.0" layoutY="302.0" prefHeight="14.0" prefWidth="600.0" text="Label" />
+            <Text fx:id="moduleInfoLabel" layoutX="42.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="155.33935546875" />
+            <Text fx:id="moduleGoalLabel" layoutX="423.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="145.33935546875" />
+            <Label layoutX="60.0" layoutY="82.0" text="Description">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="460.0" layoutY="82.0" text="Module Goals">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

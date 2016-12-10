@@ -29,11 +29,12 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <TableView fx:id="moduleTable" layoutY="29.0" prefHeight="370.0" prefWidth="600.0">
+            <TableView fx:id="moduleTable" layoutY="29.0" onMouseClicked="#onClickTableRow" prefHeight="370.0" prefWidth="600.0">
               <columns>
                 <TableColumn fx:id="moduleNr" prefWidth="109.0" text="Module nr" />
-                <TableColumn fx:id="moduleName" minWidth="0.0" prefWidth="109.0" text="Name" />
-                  <TableColumn fx:id="moduleDate" minWidth="2.0" prefWidth="105.0" text="Date" />
+                <TableColumn fx:id="moduleName" minWidth="0.0" prefWidth="163.0" text="Name" />
+                  <TableColumn fx:id="moduleDate" minWidth="2.0" prefWidth="175.0" text="Date" />
+                  <TableColumn fx:id="moduleStatus" prefWidth="151.0" text="Status" />
               </columns>
             </TableView>
          </children>

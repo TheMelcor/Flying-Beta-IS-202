@@ -9,6 +9,8 @@ package UserInterface.Controllers;
 
 import DataModel.ModuleDataModel;
 import Framework.ModuleHandler;
+import UserInterface.MainUserInterface;
+import UserInterface.Names.ViewNames;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -18,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -34,6 +37,10 @@ public class StudentMainViewController implements Initializable {
     private TableColumn<ModuleDataModel, String> moduleName;
     @FXML
     private TableColumn<ModuleDataModel, String> moduleDate;
+    @FXML
+    private TableColumn<ModuleDataModel, String> moduleStatus;
+    @FXML
+    private TableColumn<ModuleDataModel, String> buttonColumn;
     
     private ModuleHandler moduleHandler = new ModuleHandler();
 
@@ -55,6 +62,14 @@ public class StudentMainViewController implements Initializable {
             moduleList.add(module);
         }
         this.moduleTable.setItems(moduleList);
-    }    
+    }
+    
+    @FXML
+    private void onClickTableRow(MouseEvent e) throws Exception{
+        ModuleDataModel module = moduleTable.getSelectionModel().getSelectedItem();
+        ModuleHandler.setSelectedModule(module);
+        MainUserInterface.getInstance().setScene(ViewNames.studentModuleInfoView);
+        
+    }
     
 }
