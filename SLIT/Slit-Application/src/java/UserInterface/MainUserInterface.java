@@ -38,6 +38,7 @@ public class MainUserInterface extends Application {
             put(ViewNames.teacherView, "TeacherView.fxml");
             put(ViewNames.studentHandinView, "StudentHandinView.fxml");
             put(ViewNames.teacherDeliveryView, "TeacherDeliveryView.fxml");
+            put(ViewNames.teacherModuleView, "TeacherModuleView.fxml");
         }
         
     }; 

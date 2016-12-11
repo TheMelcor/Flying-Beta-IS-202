@@ -10,32 +10,23 @@
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <MenuBar prefHeight="20.0" prefWidth="600.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="Modules">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Students">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
-            <TableView layoutY="29.0" prefHeight="372.0" prefWidth="150.0">
+            <TableView fx:id="studentTable" layoutY="29.0" onMouseClicked="#onMouseClickedStudentTable" prefHeight="372.0" prefWidth="150.0">
               <columns>
-                <TableColumn prefWidth="149.0" text="Students" />
+                <TableColumn fx:id="studentColumn" prefWidth="149.0" text="Students" />
               </columns>
             </TableView>
-            <Label layoutX="258.0" layoutY="29.0" text="Add an user" />
-            <TextField id="FirstNameField" layoutX="221.0" layoutY="51.0" promptText="First Name" />
-            <ComboBox id="UserRolePicker" layoutX="231.0" layoutY="147.0" prefHeight="22.0" prefWidth="114.0" promptText="User role" />
-            <Button id="AddUserButton" layoutX="270.0" layoutY="189.0" mnemonicParsing="false" text="Add" />
-            <TextField id="LastNameField" layoutX="221.0" layoutY="73.0" promptText="Last Name" />
-            <TextField id="EmailTextField" layoutX="221.0" layoutY="95.0" promptText="Email" />
-            <TextField id="PasswordTextField" layoutX="221.0" layoutY="117.0" promptText="Password" />
+            <Label layoutX="285.0" layoutY="109.0" text="Add an user" />
+            <TextField id="FirstNameField" fx:id="firstNameField" layoutX="248.0" layoutY="131.0" promptText="First Name" />
+            <ComboBox id="UserRolePicker" fx:id="userRolePicker" layoutX="258.0" layoutY="227.0" prefHeight="22.0" prefWidth="114.0" promptText="User role" />
+            <Button id="AddUserButton" fx:id="addUserButton" layoutX="297.0" layoutY="269.0" mnemonicParsing="false" text="Add" />
+            <TextField id="LastNameField" fx:id="lastNameField" layoutX="248.0" layoutY="153.0" promptText="Last Name" />
+            <TextField id="EmailTextField" fx:id="emailField" layoutX="248.0" layoutY="175.0" promptText="Email" />
+            <TextField id="PasswordTextField" fx:id="passwordField" layoutX="248.0" layoutY="197.0" promptText="Password" />
+            <Button fx:id="deliveriesButton" layoutX="90.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickDeliveriesButton" prefHeight="31.0" prefWidth="90.0" text="Deliveries" />
+            <Button fx:id="studentButton" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickStudentButton" prefHeight="31.0" prefWidth="90.0" text="Students" />
+            <Button fx:id="moduleButton" layoutX="180.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickModuleButton" prefHeight="31.0" prefWidth="90.0" text="Modules" />
+            <Button fx:id="createModuleButton" layoutX="270.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickCreateModuleButton" prefHeight="31.0" prefWidth="90.0" text="Create Module" />
+            <Button fx:id="logOutButton" layoutX="510.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickLogOutButton" prefHeight="31.0" prefWidth="90.0" text="Log Out" />
          </children>
       </Pane>
    </children>

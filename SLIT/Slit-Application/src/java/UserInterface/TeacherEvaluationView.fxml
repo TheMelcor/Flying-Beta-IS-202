@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.Controllers.TeacherEvaluationViewController">
    <children>
       <Pane id="EvaluationComboBox" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <MenuBar prefHeight="29.0" prefWidth="600.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="Modules">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Students">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
-            <Label id="ModuleEvaluationLabel" layoutX="175.0" layoutY="54.0" text="Label" />
-            <TextArea id="EvaluateCommentText" layoutX="189.0" layoutY="71.0" prefHeight="135.0" prefWidth="223.0" promptText="Evaluation comment" />
-            <ComboBox layoutX="260.0" layoutY="213.0" prefHeight="22.0" prefWidth="73.0" promptText="Grade" />
-            <Button id="EvaluateButton" layoutX="276.0" layoutY="249.0" mnemonicParsing="false" text="Done" />
+            <Label id="ModuleEvaluationLabel" alignment="CENTER" layoutY="31.0" prefHeight="31.0" prefWidth="600.0" text="Evaluation">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <TextArea id="EvaluateCommentText" fx:id="evaluationCommentText" layoutX="189.0" layoutY="133.0" prefHeight="135.0" prefWidth="223.0" promptText="Evaluation comment" />
+            <ComboBox fx:id="gradeComboBox" layoutX="260.0" layoutY="280.0" prefHeight="22.0" prefWidth="73.0" promptText="Grade" />
+            <Button id="EvaluateButton" layoutX="254.0" layoutY="319.0" mnemonicParsing="false" onAction="#onClickSaveButton" text="Save Evaluation" />
+            <Button fx:id="deliveriesButton" layoutX="90.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickDeliveriesButton" prefHeight="31.0" prefWidth="90.0" text="Deliveries" />
+            <Button fx:id="studentButton" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickStudentButton" prefHeight="31.0" prefWidth="90.0" text="Students" />
+            <Button fx:id="moduleButton" layoutX="180.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickModuleButton" prefHeight="31.0" prefWidth="90.0" text="Modules" />
+            <Button fx:id="createModuleButton" layoutX="270.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickCreateModuleButton" prefHeight="31.0" prefWidth="90.0" text="Create Module" />
+            <Button fx:id="logOutButton" layoutX="510.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickLogOutButton" prefHeight="31.0" prefWidth="90.0" text="Log Out" />
+            <Label fx:id="moduleNameLabel" layoutX="122.0" layoutY="88.0" text="Module Label" />
+            <Label fx:id="studentNameLabel" layoutX="415.0" layoutY="88.0" prefHeight="14.0" prefWidth="82.0" text="Student Name" />
          </children>
       </Pane>
    </children>

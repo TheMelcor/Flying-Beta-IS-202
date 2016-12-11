@@ -23,5 +23,6 @@ public interface DeliverySessionBeanRemote {
     List<DeliveryDataModel> getDeliveriesByUser(UserDataModel user);
     List<DeliveryDataModel> getDeliveriesByModule(ModuleDataModel module);
     void saveDelivery(DeliveryDataModel delivery);
+    void updateDeliveryStatus(DeliveryDataModel delivery);
       
 }

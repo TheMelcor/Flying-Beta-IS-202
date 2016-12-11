@@ -66,4 +66,8 @@ public class DeliveryHandler {
     public void saveDelivery(DeliveryDataModel delivery){
         this.lookupDeliverySessionBeanRemote().saveDelivery(delivery);
     }
+    
+    public void updateDeliveryStatus(DeliveryDataModel delivery){
+        this.lookupDeliverySessionBeanRemote().updateDeliveryStatus(delivery);
+    }
 }

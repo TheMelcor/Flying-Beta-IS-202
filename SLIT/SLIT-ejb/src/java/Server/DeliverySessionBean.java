@@ -108,4 +108,21 @@ public class DeliverySessionBean implements DeliverySessionBeanRemote {
             e.printStackTrace();
         }
     }
+    
+    @Override
+    public void updateDeliveryStatus(DeliveryDataModel delivery){
+        try{
+            Handin deliveryEntity = (Handin)em.find(Handin.class, delivery.getId());
+            
+            
+            deliveryEntity.setDeliveryStatus(delivery.getDeliveryStatus());
+            em.persist(deliveryEntity);
+            
+            System.out.println(delivery.getDeliveryStatus());
+            
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

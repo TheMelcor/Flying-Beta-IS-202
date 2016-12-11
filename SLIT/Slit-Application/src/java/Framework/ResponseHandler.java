@@ -42,4 +42,8 @@ public class ResponseHandler {
     public List<ResponseDataModel> getResponsesByDelivery(DeliveryDataModel delivery){
         return this.lookupResponseSessionBeanRemote().getResponsesByDelivery(delivery);
     }
+    
+    public void saveResponse(ResponseDataModel response){
+        this.lookupResponseSessionBeanRemote().saveResponse(response);
+    }
 }
