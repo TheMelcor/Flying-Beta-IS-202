@@ -6,7 +6,6 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,9 +17,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -47,11 +43,9 @@ public class Response implements Serializable {
     @Size(max = 255)
     @Column(name = "RespComment", length = 255)
     private String respComment;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "RespDate", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date respDate;
+    @Size(max = 25)
+    @Column(name = "RespDate", length = 25)
+    private String respDate;
     @JoinColumn(name = "WrittenBy", referencedColumnName = "UserId", nullable = false)
     @ManyToOne(optional = false)
     private User writtenBy;
@@ -64,11 +58,6 @@ public class Response implements Serializable {
 
     public Response(Integer respId) {
         this.respId = respId;
-    }
-
-    public Response(Integer respId, Date respDate) {
-        this.respId = respId;
-        this.respDate = respDate;
     }
 
     public Integer getRespId() {
@@ -87,11 +76,11 @@ public class Response implements Serializable {
         this.respComment = respComment;
     }
 
-    public Date getRespDate() {
+    public String getRespDate() {
         return respDate;
     }
 
-    public void setRespDate(Date respDate) {
+    public void setRespDate(String respDate) {
         this.respDate = respDate;
     }
 

@@ -6,7 +6,7 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -50,9 +50,9 @@ public class Quiz implements Serializable {
     @ManyToOne
     private Module moduleNr;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "quizId")
-    private Collection<Question> questionCollection;
+    private List<Question> questionList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "quizId")
-    private Collection<Quizresults> quizresultsCollection;
+    private List<Quizresults> quizresultsList;
 
     public Quiz() {
     }
@@ -86,21 +86,21 @@ public class Quiz implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Question> getQuestionCollection() {
-        return questionCollection;
+    public List<Question> getQuestionList() {
+        return questionList;
     }
 
-    public void setQuestionCollection(Collection<Question> questionCollection) {
-        this.questionCollection = questionCollection;
+    public void setQuestionList(List<Question> questionList) {
+        this.questionList = questionList;
     }
 
     @XmlTransient
-    public Collection<Quizresults> getQuizresultsCollection() {
-        return quizresultsCollection;
+    public List<Quizresults> getQuizresultsList() {
+        return quizresultsList;
     }
 
-    public void setQuizresultsCollection(Collection<Quizresults> quizresultsCollection) {
-        this.quizresultsCollection = quizresultsCollection;
+    public void setQuizresultsList(List<Quizresults> quizresultsList) {
+        this.quizresultsList = quizresultsList;
     }
 
     @Override

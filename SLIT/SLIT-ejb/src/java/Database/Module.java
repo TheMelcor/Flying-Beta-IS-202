@@ -6,8 +6,7 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.Collection;
-import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,8 +16,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -55,30 +52,23 @@ public class Module implements Serializable {
     @Size(max = 255)
     @Column(name = "ModuleGoal", length = 255)
     private String moduleGoal;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "HandinDate", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date handinDate;
+    @Size(max = 25)
+    @Column(name = "HandinDate", length = 25)
+    private String handinDate;
     @OneToMany(mappedBy = "moduleNr")
-    private Collection<Quiz> quizCollection;
+    private List<Quiz> quizList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "moduleNr")
-    private Collection<Resources> resourcesCollection;
+    private List<Resources> resourcesList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "moduleNr")
-    private Collection<Handin> handinCollection;
+    private List<Handin> handinList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "moduleNr")
-    private Collection<Moduleplan> moduleplanCollection;
+    private List<Moduleplan> moduleplanList;
 
     public Module() {
     }
 
     public Module(Integer moduleNr) {
         this.moduleNr = moduleNr;
-    }
-
-    public Module(Integer moduleNr, Date handinDate) {
-        this.moduleNr = moduleNr;
-        this.handinDate = handinDate;
     }
 
     public Integer getModuleNr() {
@@ -113,48 +103,48 @@ public class Module implements Serializable {
         this.moduleGoal = moduleGoal;
     }
 
-    public Date getHandinDate() {
+    public String getHandinDate() {
         return handinDate;
     }
 
-    public void setHandinDate(Date handinDate) {
+    public void setHandinDate(String handinDate) {
         this.handinDate = handinDate;
     }
 
     @XmlTransient
-    public Collection<Quiz> getQuizCollection() {
-        return quizCollection;
+    public List<Quiz> getQuizList() {
+        return quizList;
     }
 
-    public void setQuizCollection(Collection<Quiz> quizCollection) {
-        this.quizCollection = quizCollection;
-    }
-
-    @XmlTransient
-    public Collection<Resources> getResourcesCollection() {
-        return resourcesCollection;
-    }
-
-    public void setResourcesCollection(Collection<Resources> resourcesCollection) {
-        this.resourcesCollection = resourcesCollection;
+    public void setQuizList(List<Quiz> quizList) {
+        this.quizList = quizList;
     }
 
     @XmlTransient
-    public Collection<Handin> getHandinCollection() {
-        return handinCollection;
+    public List<Resources> getResourcesList() {
+        return resourcesList;
     }
 
-    public void setHandinCollection(Collection<Handin> handinCollection) {
-        this.handinCollection = handinCollection;
+    public void setResourcesList(List<Resources> resourcesList) {
+        this.resourcesList = resourcesList;
     }
 
     @XmlTransient
-    public Collection<Moduleplan> getModuleplanCollection() {
-        return moduleplanCollection;
+    public List<Handin> getHandinList() {
+        return handinList;
     }
 
-    public void setModuleplanCollection(Collection<Moduleplan> moduleplanCollection) {
-        this.moduleplanCollection = moduleplanCollection;
+    public void setHandinList(List<Handin> handinList) {
+        this.handinList = handinList;
+    }
+
+    @XmlTransient
+    public List<Moduleplan> getModuleplanList() {
+        return moduleplanList;
+    }
+
+    public void setModuleplanList(List<Moduleplan> moduleplanList) {
+        this.moduleplanList = moduleplanList;
     }
 
     @Override

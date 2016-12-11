@@ -6,7 +6,6 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,8 +15,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -42,11 +39,9 @@ public class Moduleplan implements Serializable {
     @Size(min = 1, max = 255)
     @Column(name = "Id", nullable = false, length = 255)
     private String id;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "HandinDate", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date handinDate;
+    @Size(max = 25)
+    @Column(name = "HandinDate", length = 25)
+    private String handinDate;
     @JoinColumn(name = "ModuleNr", referencedColumnName = "ModuleNr", nullable = false)
     @ManyToOne(optional = false)
     private Module moduleNr;
@@ -61,11 +56,6 @@ public class Moduleplan implements Serializable {
         this.id = id;
     }
 
-    public Moduleplan(String id, Date handinDate) {
-        this.id = id;
-        this.handinDate = handinDate;
-    }
-
     public String getId() {
         return id;
     }
@@ -74,11 +64,11 @@ public class Moduleplan implements Serializable {
         this.id = id;
     }
 
-    public Date getHandinDate() {
+    public String getHandinDate() {
         return handinDate;
     }
 
-    public void setHandinDate(Date handinDate) {
+    public void setHandinDate(String handinDate) {
         this.handinDate = handinDate;
     }
 

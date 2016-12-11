@@ -6,7 +6,7 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -50,7 +50,7 @@ public class Question implements Serializable {
     @ManyToOne(optional = false)
     private Quiz quizId;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "questionId")
-    private Collection<Answer> answerCollection;
+    private List<Answer> answerList;
 
     public Question() {
     }
@@ -84,12 +84,12 @@ public class Question implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Answer> getAnswerCollection() {
-        return answerCollection;
+    public List<Answer> getAnswerList() {
+        return answerList;
     }
 
-    public void setAnswerCollection(Collection<Answer> answerCollection) {
-        this.answerCollection = answerCollection;
+    public void setAnswerList(List<Answer> answerList) {
+        this.answerList = answerList;
     }
 
     @Override

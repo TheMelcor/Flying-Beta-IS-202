@@ -28,14 +28,14 @@ ModuleNr Int(10) NOT NULL,
 ModuleName varchar(255),
 ModuleDesc varchar(255),
 ModuleGoal varchar(255),
-HandinDate TimeStamp,
+HandinDate varchar(25),
 PRIMARY KEY (ModuleNr)
 );
 
 CREATE TABLE Handin
 (
 Id int NOT NULL AUTO_INCREMENT,
-DeliveryDate TimeStamp,
+DeliveryDate varchar(25),
 DeliveredBy int NOT NULL,
 DeliveryStatus varchar(55) DEFAULT 'Not Evaluated',
 Content varchar(255),
@@ -49,7 +49,7 @@ CREATE TABLE Response
 (
 RespId int NOT NULL AUTO_INCREMENT,
 RespComment varchar(255),
-RespDate TimeStamp,
+RespDate varchar(25),
 WrittenBy int NOT NULL,
 Handin int NOT NULL,
 PRIMARY KEY (RespId),
@@ -60,7 +60,7 @@ FOREIGN KEY (Handin) REFERENCES Handin(Id)
 CREATE TABLE Evaluation
 (
 EvalId int NOT NULL AUTO_INCREMENT,
-EvalDate TimeStamp,
+EvalDate varchar(25),
 Evaluation varchar(10),
 EvaluatedBy int NOT NULL,
 Handin int NOT NULL,
@@ -134,8 +134,8 @@ CREATE TABLE Calendar
 Id varchar(255) NOT NULL,
 CalendarTitle varchar(50),
 Description varchar(255),
-CreatedDate TimeStamp NOT NULL,
-EndDate TimeStamp NOT NULL,
+CreatedDate varchar(25) NOT NULL,
+EndDate varchar(25) NOT NULL,
 Content varchar(255),
 OwnerId int NOT NULL,
 PRIMARY KEY (Id),
@@ -145,7 +145,7 @@ FOREIGN KEY (OwnerId) REFERENCES User(UserId)
 CREATE TABLE ModulePlan
 (
 Id varchar(255) NOT NULL,
-HandinDate TimeStamp,
+HandinDate varchar(25),
 ModuleNr Int(10) NOT NULL,
 CalendarId varchar(255) NOT NULL,
 PRIMARY KEY (Id),

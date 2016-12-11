@@ -38,7 +38,7 @@ public class Main {
         
         UserDataModel testUser = new UserDataModel();
         
-        testUser.setEmail("email@4554email.email");
+        testUser.setEmail("email@4558email.email");
         testUser.setFirstName("Lasse");
         testUser.setLastName("Norman");
         testUser.setPassword("password");
@@ -50,14 +50,11 @@ public class Main {
         
         DeliveryDataModel testDelivery = new DeliveryDataModel();
         
-        testDelivery.setDeliveredBy(testUser);
-        SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSSSSSS");//dd/MM/yyyy
+        testDelivery.setDeliveredBy(handler.getUserById(3));
+        SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//dd/MM/yyyy
         Date now = new Date();
         String strDate = sdfDate.format(now);
-        System.out.println(String.valueOf(System.currentTimeMillis()));
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        System.out.println(String.valueOf(timestamp));
-        testDelivery.setDeliveryDate(String.valueOf(timestamp));
+        testDelivery.setDeliveryDate(strDate);
         testDelivery.setDeliveryStatus("Under Evaluation");
         testDelivery.setContent("some content");
         testDelivery.setModuleNr(moduleHandler.getModuleFromNr(1));

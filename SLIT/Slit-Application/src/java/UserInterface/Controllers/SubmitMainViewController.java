@@ -14,6 +14,8 @@ import UserInterface.MainUserInterface;
 import UserInterface.Names.ViewNames;
 import java.net.URL;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -69,8 +71,10 @@ public class SubmitMainViewController implements Initializable {
         delivery.setDeliveredBy(UserHandler.getLoggedInUser());
         delivery.setModuleNr(ModuleHandler.getSelectedModule());
         delivery.setContent(deliveryTextArea.getText());
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        delivery.setDeliveryDate(String.valueOf(timestamp));
+        SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//dd/MM/yyyy
+        Date now = new Date();
+        String strDate = sdfDate.format(now);
+        delivery.setDeliveryDate(strDate);
         deliveryHandler.saveDelivery(delivery);
         DeliveryHandler.setSelectedDelivery(delivery);
         

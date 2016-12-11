@@ -6,8 +6,7 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.Collection;
-import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -19,8 +18,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -58,14 +55,14 @@ public class Calendar implements Serializable {
     private String description;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "CreatedDate", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdDate;
+    @Size(min = 1, max = 25)
+    @Column(name = "CreatedDate", nullable = false, length = 25)
+    private String createdDate;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "EndDate", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date endDate;
+    @Size(min = 1, max = 25)
+    @Column(name = "EndDate", nullable = false, length = 25)
+    private String endDate;
     @Size(max = 255)
     @Column(name = "Content", length = 255)
     private String content;
@@ -73,7 +70,7 @@ public class Calendar implements Serializable {
     @ManyToOne(optional = false)
     private User ownerId;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "calendarId")
-    private Collection<Moduleplan> moduleplanCollection;
+    private List<Moduleplan> moduleplanList;
 
     public Calendar() {
     }
@@ -82,7 +79,7 @@ public class Calendar implements Serializable {
         this.id = id;
     }
 
-    public Calendar(String id, Date createdDate, Date endDate) {
+    public Calendar(String id, String createdDate, String endDate) {
         this.id = id;
         this.createdDate = createdDate;
         this.endDate = endDate;
@@ -112,19 +109,19 @@ public class Calendar implements Serializable {
         this.description = description;
     }
 
-    public Date getCreatedDate() {
+    public String getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
+    public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
@@ -145,12 +142,12 @@ public class Calendar implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Moduleplan> getModuleplanCollection() {
-        return moduleplanCollection;
+    public List<Moduleplan> getModuleplanList() {
+        return moduleplanList;
     }
 
-    public void setModuleplanCollection(Collection<Moduleplan> moduleplanCollection) {
-        this.moduleplanCollection = moduleplanCollection;
+    public void setModuleplanList(List<Moduleplan> moduleplanList) {
+        this.moduleplanList = moduleplanList;
     }
 
     @Override

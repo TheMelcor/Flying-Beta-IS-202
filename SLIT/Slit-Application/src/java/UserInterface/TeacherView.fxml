@@ -6,33 +6,23 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.TeacherViewController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.Controllers.TeacherViewController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <MenuBar prefHeight="29.0" prefWidth="600.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="Modules">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Students">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
-            <TableView id="moduleTable" layoutY="29.0" prefHeight="293.0" prefWidth="600.0">
+            <TableView id="moduleTable" fx:id="deliveryTable" layoutY="31.0" onMouseClicked="#onMouseClickedStudentTable" prefHeight="371.0" prefWidth="600.0">
               <columns>
-                <TableColumn prefWidth="149.0" text="Module nr, description" />
-                <TableColumn prefWidth="155.0" text="Module nr, description" />
-                  <TableColumn minWidth="8.0" prefWidth="147.0" text="Module nr, description" />
-                  <TableColumn minWidth="0.0" prefWidth="148.0" text="Module nr, description" />
+                <TableColumn fx:id="studentName" prefWidth="138.0" text="Student Name" />
+                <TableColumn fx:id="moduleNr" prefWidth="76.0" text="Module Nr" />
+                  <TableColumn fx:id="deliveryStatus" minWidth="8.0" prefWidth="148.0" text="Delivery Status" />
+                  <TableColumn fx:id="dateDelivered" minWidth="0.0" prefWidth="237.0" text="Date Delivered" />
               </columns>
             </TableView>
-            <Button id="CreateButton" layoutX="516.0" layoutY="346.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" text="Create" />
+            <Button fx:id="deliveriesButton" layoutX="90.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickDeliveriesButton" prefHeight="31.0" prefWidth="90.0" text="Deliveries" />
+            <Button fx:id="studentButton" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickStudentButton" prefHeight="31.0" prefWidth="90.0" text="Students" />
+            <Button fx:id="moduleButton" layoutX="180.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickModuleButton" prefHeight="31.0" prefWidth="90.0" text="Modules" />
+            <Button fx:id="createModuleButton" layoutX="270.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickCreateModuleButton" prefHeight="31.0" prefWidth="90.0" text="Create Module" />
+            <Button fx:id="logOutButton" layoutX="510.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickLogOutButton" prefHeight="31.0" prefWidth="90.0" text="Log Out" />
          </children>
       </Pane>
    </children>

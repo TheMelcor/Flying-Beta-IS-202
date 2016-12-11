@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -24,10 +25,16 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <TextArea id="ModuleCreateText" layoutX="195.0" layoutY="79.0" prefHeight="157.0" prefWidth="211.0" />
-            <Label id="CreateLabel" layoutX="283.0" layoutY="53.0" text="Label" />
-            <DatePicker id="duedatePicker" layoutX="209.0" layoutY="241.0" />
-            <Button id="CreateModuleButton" layoutX="276.0" layoutY="275.0" mnemonicParsing="false" text="Create" />
+            <TextArea id="ModuleCreateText" layoutX="45.0" layoutY="128.0" prefHeight="157.0" prefWidth="211.0" promptText="Module Description" />
+            <Label id="CreateLabel" alignment="CENTER" layoutY="47.0" prefHeight="23.0" prefWidth="600.0" text="Module Creation">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <DatePicker id="duedatePicker" layoutX="216.0" layoutY="297.0" />
+            <Button id="CreateModuleButton" layoutX="277.0" layoutY="335.0" mnemonicParsing="false" text="Create" />
+            <TextField layoutX="307.0" layoutY="84.0" promptText="Module Name" />
+            <TextArea id="ModuleCreateText" layoutX="350.0" layoutY="128.0" prefHeight="157.0" prefWidth="211.0" promptText="Module Goals" />
+            <TextField layoutX="224.0" layoutY="84.0" prefHeight="22.0" prefWidth="64.0" promptText="Module Nr" />
          </children>
       </Pane>
    </children>

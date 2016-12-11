@@ -6,7 +6,6 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,9 +17,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -44,11 +40,9 @@ public class Evaluation implements Serializable {
     @Basic(optional = false)
     @Column(name = "EvalId", nullable = false)
     private Integer evalId;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "EvalDate", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date evalDate;
+    @Size(max = 25)
+    @Column(name = "EvalDate", length = 25)
+    private String evalDate;
     @Size(max = 10)
     @Column(name = "Evaluation", length = 10)
     private String evaluation;
@@ -66,11 +60,6 @@ public class Evaluation implements Serializable {
         this.evalId = evalId;
     }
 
-    public Evaluation(Integer evalId, Date evalDate) {
-        this.evalId = evalId;
-        this.evalDate = evalDate;
-    }
-
     public Integer getEvalId() {
         return evalId;
     }
@@ -79,11 +68,11 @@ public class Evaluation implements Serializable {
         this.evalId = evalId;
     }
 
-    public Date getEvalDate() {
+    public String getEvalDate() {
         return evalDate;
     }
 
-    public void setEvalDate(Date evalDate) {
+    public void setEvalDate(String evalDate) {
         this.evalDate = evalDate;
     }
 

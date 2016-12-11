@@ -78,7 +78,7 @@ public class DataModelConverter {
         moduleModel.setModuleName(module.getModuleName());
         moduleModel.setModuleDesc(module.getModuleDesc());
         moduleModel.setModuleGoal(module.getModuleGoal());
-        moduleModel.setHandinDate(String.valueOf(module.getHandinDate()));
+        moduleModel.setHandinDate(module.getHandinDate());
         
         return moduleModel;
     }
@@ -90,7 +90,7 @@ public class DataModelConverter {
         module.setModuleName(moduleModel.getModuleName());
         module.setModuleDesc(moduleModel.getModuleDesc());
         module.setModuleGoal(moduleModel.getModuleGoal());
-        module.setHandinDate(Timestamp.valueOf(moduleModel.getHandinDate()));
+        module.setHandinDate(moduleModel.getHandinDate());
         
         return module;
     }
@@ -101,7 +101,7 @@ public class DataModelConverter {
         deliveryModel.setId(delivery.getId());
         deliveryModel.setModuleNr(convertModuleEntityToModel(delivery.getModuleNr()));
         deliveryModel.setDeliveredBy(convertUserEntityToModel(delivery.getDeliveredBy()));
-        deliveryModel.setDeliveryDate(String.valueOf(delivery.getDeliveryDate()));
+        deliveryModel.setDeliveryDate(delivery.getDeliveryDate());
         deliveryModel.setContent(delivery.getContent());
         deliveryModel.setDeliveryStatus(delivery.getDeliveryStatus());
         
@@ -114,7 +114,7 @@ public class DataModelConverter {
         delivery.setId(deliveryModel.getId());
         delivery.setModuleNr(convertModuleModelToEntity(deliveryModel.getModuleNr()));
         delivery.setDeliveredBy(convertUserModelToEntity(deliveryModel.getDeliveredBy()));
-        delivery.setDeliveryDate(Timestamp.valueOf(deliveryModel.getDeliveryDate()));
+        delivery.setDeliveryDate(deliveryModel.getDeliveryDate());
         delivery.setContent(deliveryModel.getContent());
         delivery.setDeliveryStatus(deliveryModel.getDeliveryStatus());
         
@@ -128,7 +128,7 @@ public class DataModelConverter {
         responseModel.setAuthor(convertUserEntityToModel(response.getWrittenBy()));
         responseModel.setDeliveryId(convertDeliveryEntityToModel(response.getHandin()));
         responseModel.setComment(response.getRespComment());
-        responseModel.setDate(String.valueOf(response.getRespDate()));
+        responseModel.setDate(response.getRespDate());
         
         return responseModel;
     }
@@ -140,7 +140,7 @@ public class DataModelConverter {
         response.setWrittenBy(convertUserModelToEntity(responseModel.getAuthor()));
         response.setHandin(convertDeliveryModelToEntity(responseModel.getDeliveryId()));
         response.setRespComment(responseModel.getComment());
-        response.setRespDate(Timestamp.valueOf(responseModel.getDate()));
+        response.setRespDate(responseModel.getDate());
         
         return response;
     }
@@ -150,7 +150,7 @@ public class DataModelConverter {
         
         evaluationModel.setEvaluationId(evaluation.getEvalId());
         evaluationModel.setEvaluation(evaluation.getEvaluation());
-        evaluationModel.setDate(String.valueOf(evaluation.getEvalDate()));
+        evaluationModel.setDate(evaluation.getEvalDate());
         evaluationModel.setEvaluatedBy(convertUserEntityToModel(evaluation.getEvaluatedBy()));
         evaluationModel.setHandin(convertDeliveryEntityToModel(evaluation.getHandin()));
         
@@ -161,7 +161,7 @@ public class DataModelConverter {
         Evaluation evaluation = new Evaluation();
         
         evaluation.setEvalId(evaluationModel.getEvaluationId());
-        evaluation.setEvalDate(Timestamp.valueOf(evaluationModel.getDate()));
+        evaluation.setEvalDate(evaluationModel.getDate());
         evaluation.setEvaluation(evaluationModel.getEvaluation());
         evaluation.setEvaluatedBy(convertUserModelToEntity(evaluationModel.getEvaluatedBy()));
         evaluation.setHandin(convertDeliveryModelToEntity(evaluationModel.getHandin()));
