@@ -40,6 +40,10 @@ public class DeliveryDataModel implements java.io.Serializable{
         return deliveredBy;
     }
     
+    public String getDeliveredByFullName(){
+        return deliveredBy.getFullName();
+    }
+    
     public void setDeliveredBy(UserDataModel deliveredBy){
         this.deliveredBy = deliveredBy;
     }

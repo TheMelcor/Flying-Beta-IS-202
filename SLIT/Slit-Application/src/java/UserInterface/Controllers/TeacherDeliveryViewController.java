@@ -12,23 +12,19 @@ import UserInterface.MainUserInterface;
 import UserInterface.Names.ViewNames;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
  *
  * @author Melcor
  */
-public class TeacherViewController implements Initializable {
+public class TeacherDeliveryViewController implements Initializable {
 
     // ---- Top Menu Items ----
     @FXML
@@ -43,51 +39,34 @@ public class TeacherViewController implements Initializable {
     private Button logOutButton;
     // ---- Ent Top Menu ----
     
-    
     @FXML
-    private TableView<DeliveryDataModel> deliveryTable;
+    private Label studentNameLabel;
     @FXML
-    private TableColumn<DeliveryDataModel, String> studentName;
+    private Label moduleNrLabel;
     @FXML
-    private TableColumn<DeliveryDataModel, String> moduleNr;
+    private Text deliveryContentText;
     @FXML
-    private TableColumn<DeliveryDataModel, String> deliveryStatus;
+    private Button evaluateButton;
     @FXML
-    private TableColumn<DeliveryDataModel, String> dateDelivered;
-    
-    private DeliveryHandler deliveryHandler = new DeliveryHandler();
-    
+    private Label dateDeliveredLabel;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.studentName.setCellValueFactory(
-                new PropertyValueFactory<DeliveryDataModel, String>("deliveredByFullName"));
-        this.moduleNr.setCellValueFactory(
-                new PropertyValueFactory<DeliveryDataModel, String>("actualModuleNr"));
-        this.deliveryStatus.setCellValueFactory(
-                new PropertyValueFactory<DeliveryDataModel, String>("deliveryStatus"));
-        this.dateDelivered.setCellValueFactory(
-                new PropertyValueFactory<DeliveryDataModel, String>("deliveryDate"));
-        
-        ObservableList<DeliveryDataModel> deliveryList = FXCollections.observableArrayList();
-        
-        for(DeliveryDataModel delivery : this.deliveryHandler.getAllDeliveries()){
-            deliveryList.add(delivery);
-        }
-        
-        this.deliveryTable.setItems(deliveryList);
+        DeliveryDataModel delivery = DeliveryHandler.getSelectedDelivery();
+        this.studentNameLabel.setText(delivery.getDeliveredByFullName());
+        this.moduleNrLabel.setText(delivery.getModuleNr().getModuleNr() + " " + delivery.getModuleNr().getModuleName());
+        this.deliveryContentText.setText(delivery.getContent());
+        this.dateDeliveredLabel.setText(delivery.getDeliveryDate());
     }    
 
     @FXML
-    private void onMouseClickedStudentTable(MouseEvent event) throws Exception{
-        DeliveryDataModel delivery = deliveryTable.getSelectionModel().getSelectedItem();
-        DeliveryHandler.setSelectedDelivery(delivery);
-        MainUserInterface.getInstance().setScene(ViewNames.teacherDeliveryView);
+    private void onClickEvaluateButton(ActionEvent event) throws Exception{
+        MainUserInterface.getInstance().setScene(ViewNames.teacherEvaluationView);
     }
-
+    
     
     // ---- Start Top Menu on click functions ----
     @FXML

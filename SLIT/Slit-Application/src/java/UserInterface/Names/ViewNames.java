@@ -20,4 +20,5 @@ public class ViewNames {
     public static final String teacherStudentView = "teacherStudentView";
     public static final String teacherView = "teacherView";
     public static final String studentHandinView = "studentHandinView";
+    public static final String teacherDeliveryView = "teacherDeliveryView";
 }
