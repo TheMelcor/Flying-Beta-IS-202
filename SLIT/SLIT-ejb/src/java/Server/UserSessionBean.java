@@ -95,12 +95,32 @@ public class UserSessionBean implements UserSessionBeanRemote{
     @Override
     public void saveUser(UserDataModel user){
         try{
-            User userEntity = DataModelConverter.convertUserModelToEntity(user);
+            if(!checkIfUserExsists(user)){
+                User userEntity = DataModelConverter.convertUserModelToEntity(user);
             
-            em.persist(userEntity);
+                em.persist(userEntity);
+            }
+            
         }
         catch (Exception e){
             e.printStackTrace();
+        }
+    }
+    
+    private boolean checkIfUserExsists(UserDataModel user){
+        try {
+            String email = user.getEmail();
+            Query query = em.createNamedQuery("User.findByEmail", User.class);
+            
+            query.setParameter("email", email);
+            
+            User userEntity = (User)query.getSingleResult();
+            
+            return true;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return false;
         }
     }
     

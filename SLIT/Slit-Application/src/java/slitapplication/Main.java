@@ -5,9 +5,15 @@
  */
 package slitapplication;
 
+import DataModel.DeliveryDataModel;
 import DataModel.UserDataModel;
 import DataModel.UsrRoleDataModel;
+import Framework.DeliveryHandler;
+import Framework.ModuleHandler;
 import Framework.UserHandler;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -23,6 +29,8 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         UserHandler handler = new UserHandler();
+        DeliveryHandler deliveryHandler = new DeliveryHandler();
+        ModuleHandler moduleHandler = new ModuleHandler();
         
         UserDataModel model = handler.getUserById(1);
         
@@ -30,8 +38,8 @@ public class Main {
         
         UserDataModel testUser = new UserDataModel();
         
-        testUser.setEmail("email@2email.email");
-        testUser.setFirstName("Ola");
+        testUser.setEmail("email@4554email.email");
+        testUser.setFirstName("Lasse");
         testUser.setLastName("Norman");
         testUser.setPassword("password");
         testUser.setUserRole(new UsrRoleDataModel(2,"Student"));
@@ -40,9 +48,32 @@ public class Main {
         
         List<UserDataModel> users = handler.getAllUsers();
         
+        DeliveryDataModel testDelivery = new DeliveryDataModel();
+        
+        testDelivery.setDeliveredBy(testUser);
+        SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSSSSSS");//dd/MM/yyyy
+        Date now = new Date();
+        String strDate = sdfDate.format(now);
+        System.out.println(String.valueOf(System.currentTimeMillis()));
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        System.out.println(String.valueOf(timestamp));
+        testDelivery.setDeliveryDate(String.valueOf(timestamp));
+        testDelivery.setDeliveryStatus("Under Evaluation");
+        testDelivery.setContent("some content");
+        testDelivery.setModuleNr(moduleHandler.getModuleFromNr(1));
+        
+        deliveryHandler.saveDelivery(testDelivery);
+        
+        List<DeliveryDataModel> deliveries = deliveryHandler.getAllDeliveries();
+        
         if (users.size() > 0){
             for (UserDataModel user : users){
                 System.out.println(user.getFullName());
+            }
+        }
+        if (deliveries.size() > 0){
+            for (DeliveryDataModel delivery : deliveries){
+                System.out.println(delivery.getContent());
             }
         }
     }

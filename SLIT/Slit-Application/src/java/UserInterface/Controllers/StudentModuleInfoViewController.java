@@ -7,6 +7,7 @@ package UserInterface.Controllers;
 
 import DataModel.ModuleDataModel;
 import Framework.ModuleHandler;
+import Framework.UserHandler;
 import UserInterface.MainUserInterface;
 import UserInterface.Names.ViewNames;
 import java.net.URL;
@@ -24,7 +25,16 @@ import javafx.scene.text.Text;
  * @author Melcor
  */
 public class StudentModuleInfoViewController implements Initializable {
-
+   
+    // ---- Top Menu items ----
+    @FXML
+    private Button moduleButton;
+    @FXML
+    private Button deliveriesButton;
+    @FXML
+    private Button logOutButton;
+    // ---- Ent Top Menu ----
+    
     @FXML
     private Label moduleNameLabel;
     @FXML
@@ -54,5 +64,21 @@ public class StudentModuleInfoViewController implements Initializable {
     private void onClickSubmitButton(ActionEvent event) throws Exception{
         MainUserInterface.getInstance().setScene(ViewNames.submitMainView);
     }
+    
+    // ---- Top Menu on click functions ----
+    @FXML
+    private void onClickModuleButton(ActionEvent e) throws Exception{
+        MainUserInterface.getInstance().setScene(ViewNames.studentMainView);
+    }
+    @FXML
+    private void onClickDeliveriesButton(ActionEvent e) throws Exception{
+        MainUserInterface.getInstance().setScene(ViewNames.studentHandinsView);
+    }
+    @FXML
+    private void onClickLogOutButton(ActionEvent e) throws Exception{
+        UserHandler.logOutUser();
+        MainUserInterface.getInstance().setScene(ViewNames.loginView);
+    }
+    // ---- End Top Menu on click functions ----
     
 }

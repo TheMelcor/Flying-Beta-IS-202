@@ -75,7 +75,7 @@ public class DeliverySessionBean implements DeliverySessionBeanRemote {
         List<DeliveryDataModel> userDeliveries = new ArrayList<DeliveryDataModel>();
         
         for (DeliveryDataModel delivery : allDeliveries){
-            if (delivery.getDeliveredBy().equals(user)){
+            if (delivery.getDeliveredBy().getUserId() == user.getUserId()){
                 userDeliveries.add(delivery);
             }
         }
@@ -100,9 +100,9 @@ public class DeliverySessionBean implements DeliverySessionBeanRemote {
     public void saveDelivery(DeliveryDataModel delivery){
         try{
             Handin deliveryEntity = DataModelConverter.convertDeliveryModelToEntity(delivery);
-            em.getTransaction().begin();
+            
             em.persist(deliveryEntity);
-            em.getTransaction().commit();
+            
         }
         catch (Exception e){
             e.printStackTrace();

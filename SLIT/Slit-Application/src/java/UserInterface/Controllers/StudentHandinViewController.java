@@ -11,6 +11,9 @@ import DataModel.ResponseDataModel;
 import Framework.DeliveryHandler;
 import Framework.EvaluationHandler;
 import Framework.ResponseHandler;
+import Framework.UserHandler;
+import UserInterface.MainUserInterface;
+import UserInterface.Names.ViewNames;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -28,6 +31,15 @@ import javafx.scene.text.Text;
  */
 public class StudentHandinViewController implements Initializable {
 
+    // ---- Top Menu items ----
+    @FXML
+    private Button moduleButton;
+    @FXML
+    private Button deliveriesButton;
+    @FXML
+    private Button logOutButton;
+    // ---- Ent Top Menu ----
+    
     @FXML
     private Text commentText;
     @FXML
@@ -114,4 +126,20 @@ public class StudentHandinViewController implements Initializable {
         
     }
 
+    // ---- Top Menu on click functions ----
+    @FXML
+    private void onClickModuleButton(ActionEvent e) throws Exception{
+        MainUserInterface.getInstance().setScene(ViewNames.studentMainView);
+    }
+    @FXML
+    private void onClickDeliveriesButton(ActionEvent e) throws Exception{
+        MainUserInterface.getInstance().setScene(ViewNames.studentHandinsView);
+    }
+    @FXML
+    private void onClickLogOutButton(ActionEvent e) throws Exception{
+        UserHandler.logOutUser();
+        MainUserInterface.getInstance().setScene(ViewNames.loginView);
+    }
+    // ---- End Top Menu on click functions ----
+    
 }

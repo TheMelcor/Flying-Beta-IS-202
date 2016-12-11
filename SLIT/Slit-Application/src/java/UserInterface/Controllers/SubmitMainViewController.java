@@ -29,6 +29,16 @@ import javafx.scene.control.TextArea;
  */
 public class SubmitMainViewController implements Initializable {
 
+    
+    // ---- Top Menu items ----
+    @FXML
+    private Button moduleButton;
+    @FXML
+    private Button deliveriesButton;
+    @FXML
+    private Button logOutButton;
+    // ---- Ent Top Menu ----
+    
     @FXML
     private Label moduleNameLabel;
     @FXML
@@ -67,5 +77,21 @@ public class SubmitMainViewController implements Initializable {
         // Set to studentHandinView when that is fixed...
         MainUserInterface.getInstance().setScene(ViewNames.studentHandinView);
     }
+    
+    // ---- Top Menu on click functions ----
+    @FXML
+    private void onClickModuleButton(ActionEvent e) throws Exception{
+        MainUserInterface.getInstance().setScene(ViewNames.studentMainView);
+    }
+    @FXML
+    private void onClickDeliveriesButton(ActionEvent e) throws Exception{
+        MainUserInterface.getInstance().setScene(ViewNames.studentHandinsView);
+    }
+    @FXML
+    private void onClickLogOutButton(ActionEvent e) throws Exception{
+        UserHandler.logOutUser();
+        MainUserInterface.getInstance().setScene(ViewNames.loginView);
+    }
+    // ---- End Top Menu on click functions ----
     
 }

@@ -10,25 +10,6 @@
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <MenuBar prefHeight="29.0" prefWidth="600.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="Modules">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="My Hand Ins">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
             <TableView fx:id="deliveryTable" layoutY="29.0" onMouseClicked="#onMouseClickedTable" prefHeight="371.0" prefWidth="600.0">
               <columns>
                 <TableColumn fx:id="actualModuleNr" prefWidth="224.0" text="Modul Nr" />
@@ -36,6 +17,9 @@
                   <TableColumn fx:id="deliveryStatus" prefWidth="183.0" text="Status" />
               </columns>
             </TableView>
+            <Button fx:id="logOutButton" layoutX="510.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickLogOutButton" prefHeight="31.0" prefWidth="90.0" text="Log Out" />
+            <Button fx:id="deliveriesButton" layoutX="90.0" layoutY="-2.0" mnemonicParsing="false" onAction="#onClickDeliveriesButton" prefHeight="31.0" prefWidth="90.0" text="My Deliveries" />
+            <Button fx:id="moduleButton" layoutY="-2.0" mnemonicParsing="false" onAction="#onClickModuleButton" prefHeight="31.0" prefWidth="90.0" text="Modules" />
          </children>
       </Pane>
    </children>

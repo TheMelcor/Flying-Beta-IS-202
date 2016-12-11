@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -18,5 +19,10 @@
          </children>
       </Pane>
       <Label fx:id="infoBarLabel" layoutX="1.0" layoutY="379.0" prefHeight="14.0" prefWidth="600.0" />
+      <Label alignment="CENTER" layoutY="-2.0" prefHeight="69.0" prefWidth="600.0" text="SLIT - Flying Beta">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

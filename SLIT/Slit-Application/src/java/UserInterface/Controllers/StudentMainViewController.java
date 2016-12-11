@@ -32,14 +32,6 @@ import javafx.scene.input.MouseEvent;
  */
 public class StudentMainViewController implements Initializable {
 
-    @FXML
-    private TableView<ModuleDataModel> moduleTable;
-    @FXML
-    private TableColumn<ModuleDataModel, String> moduleNr;
-    @FXML
-    private TableColumn<ModuleDataModel, String> moduleName;
-    @FXML
-    private TableColumn<ModuleDataModel, String> moduleDate;
     
     // ---- Top Menu items ----
     @FXML
@@ -49,6 +41,17 @@ public class StudentMainViewController implements Initializable {
     @FXML
     private Button logOutButton;
     // ---- Ent Top Menu ----
+    
+    @FXML
+    private TableView<ModuleDataModel> moduleTable;
+    @FXML
+    private TableColumn<ModuleDataModel, String> moduleNr;
+    @FXML
+    private TableColumn<ModuleDataModel, String> moduleName;
+    @FXML
+    private TableColumn<ModuleDataModel, String> moduleDate;
+    
+    
 
 
     

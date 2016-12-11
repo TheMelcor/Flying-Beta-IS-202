@@ -12,26 +12,6 @@
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <MenuBar prefHeight="29.0" prefWidth="600.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="Modules">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Module 1" />
-                        <MenuItem mnemonicParsing="false" text="Module 2" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="My Hand Ins">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Status">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
             <Label id="mandatoryLabel" fx:id="moduleNameLabel" alignment="CENTER" layoutX="1.0" layoutY="61.0" prefHeight="14.0" prefWidth="600.0" text="Label">
                <font>
                   <Font size="14.0" />
@@ -40,6 +20,9 @@
             <Button id="ChooseFileButton" fx:id="chooseFileButton" layoutX="264.0" layoutY="281.0" mnemonicParsing="false" text="Choose files" />
             <Button id="SubmitButton" fx:id="submitButton" layoutX="276.0" layoutY="330.0" mnemonicParsing="false" onAction="#onClickSubmitDelivery" text="Submit" />
             <TextArea id="delverycontenttextfile" fx:id="deliveryTextArea" layoutX="193.0" layoutY="162.0" prefHeight="106.0" prefWidth="217.0" />
+            <Button fx:id="logOutButton" layoutX="511.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickLogOutButton" prefHeight="31.0" prefWidth="90.0" text="Log Out" />
+            <Button fx:id="deliveriesButton" layoutX="91.0" layoutY="-2.0" mnemonicParsing="false" onAction="#onClickDeliveriesButton" prefHeight="31.0" prefWidth="90.0" text="My Deliveries" />
+            <Button fx:id="moduleButton" layoutX="1.0" layoutY="-2.0" mnemonicParsing="false" onAction="#onClickModuleButton" prefHeight="31.0" prefWidth="90.0" text="Modules" />
          </children>
       </Pane>
    </children>
