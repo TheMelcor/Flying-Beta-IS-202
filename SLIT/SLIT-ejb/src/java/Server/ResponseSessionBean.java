@@ -73,7 +73,7 @@ public class ResponseSessionBean implements ResponseSessionBeanRemote{
         List<ResponseDataModel> allResponses = getAllResponses();
         
         for (ResponseDataModel response : allResponses){
-            if (response.getDeliveryId().equals(delivery)){
+            if (response.getDeliveryId().equals(delivery.getId())){
                 responses.add(response);
             }
         }

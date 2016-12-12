@@ -75,6 +75,7 @@ public class SubmitMainViewController implements Initializable {
         Date now = new Date();
         String strDate = sdfDate.format(now);
         delivery.setDeliveryDate(strDate);
+        delivery.setDeliveryStatus("Not Evaluated");
         deliveryHandler.saveDelivery(delivery);
         DeliveryHandler.setSelectedDelivery(delivery);
         
