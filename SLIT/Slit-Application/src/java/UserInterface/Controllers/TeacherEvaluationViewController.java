@@ -82,7 +82,7 @@ public class TeacherEvaluationViewController implements Initializable {
     }    
 
     @FXML
-    private void onClickSaveButton(ActionEvent event){
+    private void onClickSaveButton(ActionEvent event) throws Exception{
         DeliveryDataModel delivery = DeliveryHandler.getSelectedDelivery();
         delivery.setDeliveryStatus("Evaluated");
         deliveryHandler.updateDeliveryStatus(delivery);
@@ -107,12 +107,15 @@ public class TeacherEvaluationViewController implements Initializable {
         
         responseHandler.saveResponse(response);
         
+        MainUserInterface.getInstance().setScene(ViewNames.teacherView);
+        
         
     }
     
     // ---- Start Top Menu on click functions ----
     @FXML
     private void onClickDeliveriesButton(ActionEvent event) throws Exception{
+        MainUserInterface.getInstance().setScene(ViewNames.teacherView);
     }
 
     @FXML
@@ -122,6 +125,7 @@ public class TeacherEvaluationViewController implements Initializable {
 
     @FXML
     private void onClickModuleButton(ActionEvent event) throws Exception{
+        MainUserInterface.getInstance().setScene(ViewNames.teacherModuleView);
     }
 
     @FXML

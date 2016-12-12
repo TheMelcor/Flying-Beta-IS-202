@@ -5,22 +5,19 @@
  */
 package UserInterface.Controllers;
 
-import DataModel.DeliveryDataModel;
-import Framework.DeliveryHandler;
 import Framework.UserHandler;
 import UserInterface.MainUserInterface;
 import UserInterface.Names.ViewNames;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 /**
@@ -28,7 +25,7 @@ import javafx.scene.input.MouseEvent;
  *
  * @author Melcor
  */
-public class TeacherViewController implements Initializable {
+public class TeacherStudentViewController implements Initializable {
 
     // ---- Top Menu Items ----
     @FXML
@@ -43,19 +40,22 @@ public class TeacherViewController implements Initializable {
     private Button logOutButton;
     // ---- Ent Top Menu ----
     
-    
     @FXML
-    private TableView<DeliveryDataModel> deliveryTable;
+    private TableView<?> studentTable;
     @FXML
-    private TableColumn<DeliveryDataModel, String> studentName;
+    private TableColumn<?, ?> studentColumn;
     @FXML
-    private TableColumn<DeliveryDataModel, String> moduleNr;
+    private TextField firstNameField;
     @FXML
-    private TableColumn<DeliveryDataModel, String> deliveryStatus;
+    private ComboBox<?> userRolePicker;
     @FXML
-    private TableColumn<DeliveryDataModel, String> dateDelivered;
-    
-    private DeliveryHandler deliveryHandler = new DeliveryHandler();
+    private Button addUserButton;
+    @FXML
+    private TextField lastNameField;
+    @FXML
+    private TextField emailField;
+    @FXML
+    private TextField passwordField;
     
 
     /**
@@ -63,32 +63,13 @@ public class TeacherViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.studentName.setCellValueFactory(
-                new PropertyValueFactory<DeliveryDataModel, String>("deliveredByFullName"));
-        this.moduleNr.setCellValueFactory(
-                new PropertyValueFactory<DeliveryDataModel, String>("actualModuleNr"));
-        this.deliveryStatus.setCellValueFactory(
-                new PropertyValueFactory<DeliveryDataModel, String>("deliveryStatus"));
-        this.dateDelivered.setCellValueFactory(
-                new PropertyValueFactory<DeliveryDataModel, String>("deliveryDate"));
-        
-        ObservableList<DeliveryDataModel> deliveryList = FXCollections.observableArrayList();
-        
-        for(DeliveryDataModel delivery : this.deliveryHandler.getAllDeliveries()){
-            deliveryList.add(delivery);
-        }
-        
-        this.deliveryTable.setItems(deliveryList);
+        // TODO
     }    
 
     @FXML
-    private void onMouseClickedStudentTable(MouseEvent event) throws Exception{
-        DeliveryDataModel delivery = deliveryTable.getSelectionModel().getSelectedItem();
-        DeliveryHandler.setSelectedDelivery(delivery);
-        MainUserInterface.getInstance().setScene(ViewNames.teacherDeliveryView);
+    private void onMouseClickedStudentTable(MouseEvent event) {
     }
 
-    
     // ---- Start Top Menu on click functions ----
     @FXML
     private void onClickDeliveriesButton(ActionEvent event) throws Exception{

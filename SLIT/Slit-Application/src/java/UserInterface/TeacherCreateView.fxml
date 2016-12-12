@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.Controllers.TeacherCreateViewController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -16,7 +16,7 @@
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <DatePicker id="duedatePicker" fx:id="datePicker" layoutX="216.0" layoutY="297.0" />
+            <DatePicker id="duedatePicker" fx:id="datePicker" layoutX="203.0" layoutY="297.0" prefHeight="22.0" prefWidth="103.0" />
             <Button id="CreateModuleButton" fx:id="createButton" layoutX="277.0" layoutY="335.0" mnemonicParsing="false" onAction="#onClickCreateButton" text="Create" />
             <TextField fx:id="moduleNameField" layoutX="307.0" layoutY="84.0" promptText="Module Name" />
             <TextArea id="ModuleCreateText" fx:id="moduleGoalField" layoutX="350.0" layoutY="128.0" prefHeight="157.0" prefWidth="211.0" promptText="Module Goals" />
@@ -26,6 +26,14 @@
             <Button fx:id="moduleButton" layoutX="180.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickModuleButton" prefHeight="31.0" prefWidth="90.0" text="Modules" />
             <Button fx:id="createModuleButton" layoutX="270.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickCreateModuleButton" prefHeight="31.0" prefWidth="90.0" text="Create Module" />
             <Button fx:id="logOutButton" layoutX="510.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickLogOutButton" prefHeight="31.0" prefWidth="90.0" text="Log Out" />
+            <TextField fx:id="hourField" layoutX="315.0" layoutY="297.0" prefHeight="22.0" prefWidth="31.0" promptText="HH" />
+            <TextField fx:id="minuteField" layoutX="350.0" layoutY="297.0" prefHeight="22.0" prefWidth="31.0" promptText="MM" />
+            <TextField fx:id="secondsField" layoutX="389.0" layoutY="297.0" prefHeight="22.0" prefWidth="31.0" promptText="SS" />
+            <Label fx:id="errorLabel" alignment="CENTER" layoutX="-1.0" layoutY="364.0" prefHeight="22.0" prefWidth="600.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

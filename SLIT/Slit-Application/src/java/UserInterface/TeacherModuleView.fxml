@@ -6,23 +6,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.TeacherModuleViewController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <Button layoutY="1.0" mnemonicParsing="false" text="Students" />
-            <Button layoutX="73.0" layoutY="1.0" mnemonicParsing="false" text="Deliveries" />
-            <Button layoutX="151.0" layoutY="1.0" mnemonicParsing="false" text="Modules" />
-            <Button layoutX="533.0" layoutY="1.0" mnemonicParsing="false" text="Log Out" />
-            <Button layoutX="221.0" layoutY="1.0" mnemonicParsing="false" text="Create Module" />
-            <TableView layoutY="28.0" prefHeight="373.0" prefWidth="600.0">
+            <TableView fx:id="moduleTable" layoutY="31.0" onMouseClicked="#onMouseClickedModuleTable" prefHeight="370.0" prefWidth="600.0">
               <columns>
-                <TableColumn prefWidth="100.0" text="Module Nr" />
-                <TableColumn prefWidth="237.0" text="Description" />
-                  <TableColumn prefWidth="262.0" text="Due Date" />
+                <TableColumn fx:id="moduleNr" prefWidth="100.0" text="Module Nr" />
+                <TableColumn fx:id="moduleDescription" prefWidth="237.0" text="Description" />
+                  <TableColumn fx:id="moduleDate" prefWidth="262.0" text="Due Date" />
               </columns>
             </TableView>
+            <Button fx:id="logOutButton" layoutX="510.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickLogOutButton" prefHeight="31.0" prefWidth="90.0" text="Log Out" />
+            <Button fx:id="createModuleButton" layoutX="270.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickCreateModuleButton" prefHeight="31.0" prefWidth="90.0" text="Create Module" />
+            <Button fx:id="moduleButton" layoutX="180.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickModuleButton" prefHeight="31.0" prefWidth="90.0" text="Modules" />
+            <Button fx:id="studentButton" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickStudentButton" prefHeight="31.0" prefWidth="90.0" text="Students" />
+            <Button fx:id="deliveriesButton" layoutX="90.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickDeliveriesButton" prefHeight="31.0" prefWidth="90.0" text="Deliveries" />
          </children>
       </Pane>
    </children>

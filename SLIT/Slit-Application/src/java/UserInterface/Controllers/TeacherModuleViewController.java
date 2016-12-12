@@ -5,8 +5,8 @@
  */
 package UserInterface.Controllers;
 
-import DataModel.DeliveryDataModel;
-import Framework.DeliveryHandler;
+import DataModel.ModuleDataModel;
+import Framework.ModuleHandler;
 import Framework.UserHandler;
 import UserInterface.MainUserInterface;
 import UserInterface.Names.ViewNames;
@@ -28,7 +28,7 @@ import javafx.scene.input.MouseEvent;
  *
  * @author Melcor
  */
-public class TeacherViewController implements Initializable {
+public class TeacherModuleViewController implements Initializable {
 
     // ---- Top Menu Items ----
     @FXML
@@ -43,19 +43,16 @@ public class TeacherViewController implements Initializable {
     private Button logOutButton;
     // ---- Ent Top Menu ----
     
+    @FXML
+    private TableView<ModuleDataModel> moduleTable;
+    @FXML
+    private TableColumn<ModuleDataModel, String> moduleNr;
+    @FXML
+    private TableColumn<ModuleDataModel, String> moduleDescription;
+    @FXML
+    private TableColumn<ModuleDataModel, String> moduleDate;
     
-    @FXML
-    private TableView<DeliveryDataModel> deliveryTable;
-    @FXML
-    private TableColumn<DeliveryDataModel, String> studentName;
-    @FXML
-    private TableColumn<DeliveryDataModel, String> moduleNr;
-    @FXML
-    private TableColumn<DeliveryDataModel, String> deliveryStatus;
-    @FXML
-    private TableColumn<DeliveryDataModel, String> dateDelivered;
-    
-    private DeliveryHandler deliveryHandler = new DeliveryHandler();
+    private ModuleHandler moduleHandler = new ModuleHandler();
     
 
     /**
@@ -63,32 +60,30 @@ public class TeacherViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.studentName.setCellValueFactory(
-                new PropertyValueFactory<DeliveryDataModel, String>("deliveredByFullName"));
         this.moduleNr.setCellValueFactory(
-                new PropertyValueFactory<DeliveryDataModel, String>("actualModuleNr"));
-        this.deliveryStatus.setCellValueFactory(
-                new PropertyValueFactory<DeliveryDataModel, String>("deliveryStatus"));
-        this.dateDelivered.setCellValueFactory(
-                new PropertyValueFactory<DeliveryDataModel, String>("deliveryDate"));
+                new PropertyValueFactory<ModuleDataModel, String>("moduleNr"));
+        this.moduleDescription.setCellValueFactory(
+                new PropertyValueFactory<ModuleDataModel, String>("moduleName"));
+        this.moduleDate.setCellValueFactory(
+                new PropertyValueFactory<ModuleDataModel, String>("handinDate"));
         
-        ObservableList<DeliveryDataModel> deliveryList = FXCollections.observableArrayList();
+        ObservableList<ModuleDataModel> moduleList = FXCollections.observableArrayList();
         
-        for(DeliveryDataModel delivery : this.deliveryHandler.getAllDeliveries()){
-            deliveryList.add(delivery);
+        for(ModuleDataModel module : this.moduleHandler.getAllModules()){
+            moduleList.add(module);
         }
         
-        this.deliveryTable.setItems(deliveryList);
+        this.moduleTable.setItems(moduleList);
+                
     }    
 
     @FXML
-    private void onMouseClickedStudentTable(MouseEvent event) throws Exception{
-        DeliveryDataModel delivery = deliveryTable.getSelectionModel().getSelectedItem();
-        DeliveryHandler.setSelectedDelivery(delivery);
-        MainUserInterface.getInstance().setScene(ViewNames.teacherDeliveryView);
+    private void onMouseClickedModuleTable(MouseEvent event) throws Exception{
+        ModuleDataModel module = moduleTable.getSelectionModel().getSelectedItem();
+        ModuleHandler.setSelectedModule(module);
+        MainUserInterface.getInstance().setScene(ViewNames.teacherModuleInfoView);
     }
 
-    
     // ---- Start Top Menu on click functions ----
     @FXML
     private void onClickDeliveriesButton(ActionEvent event) throws Exception{

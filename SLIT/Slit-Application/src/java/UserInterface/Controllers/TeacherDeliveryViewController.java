@@ -71,6 +71,7 @@ public class TeacherDeliveryViewController implements Initializable {
     // ---- Start Top Menu on click functions ----
     @FXML
     private void onClickDeliveriesButton(ActionEvent event) throws Exception{
+        MainUserInterface.getInstance().setScene(ViewNames.teacherView);
     }
 
     @FXML
@@ -80,6 +81,7 @@ public class TeacherDeliveryViewController implements Initializable {
 
     @FXML
     private void onClickModuleButton(ActionEvent event) throws Exception{
+        MainUserInterface.getInstance().setScene(ViewNames.teacherModuleView);
     }
 
     @FXML

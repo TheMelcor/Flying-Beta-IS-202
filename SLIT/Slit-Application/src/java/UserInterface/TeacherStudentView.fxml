@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.Controllers.TeacherStudentViewController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -16,12 +16,12 @@
               </columns>
             </TableView>
             <Label layoutX="285.0" layoutY="109.0" text="Add an user" />
-            <TextField id="FirstNameField" fx:id="firstNameField" layoutX="248.0" layoutY="131.0" promptText="First Name" />
-            <ComboBox id="UserRolePicker" fx:id="userRolePicker" layoutX="258.0" layoutY="227.0" prefHeight="22.0" prefWidth="114.0" promptText="User role" />
-            <Button id="AddUserButton" fx:id="addUserButton" layoutX="297.0" layoutY="269.0" mnemonicParsing="false" text="Add" />
-            <TextField id="LastNameField" fx:id="lastNameField" layoutX="248.0" layoutY="153.0" promptText="Last Name" />
-            <TextField id="EmailTextField" fx:id="emailField" layoutX="248.0" layoutY="175.0" promptText="Email" />
-            <TextField id="PasswordTextField" fx:id="passwordField" layoutX="248.0" layoutY="197.0" promptText="Password" />
+            <TextField id="FirstNameField" fx:id="firstNameField" layoutX="248.0" layoutY="141.0" promptText="First Name" />
+            <ComboBox id="UserRolePicker" fx:id="userRolePicker" layoutX="258.0" layoutY="256.0" prefHeight="22.0" prefWidth="114.0" promptText="User role" />
+            <Button id="AddUserButton" fx:id="addUserButton" layoutX="297.0" layoutY="294.0" mnemonicParsing="false" text="Add" />
+            <TextField id="LastNameField" fx:id="lastNameField" layoutX="248.0" layoutY="172.0" promptText="Last Name" />
+            <TextField id="EmailTextField" fx:id="emailField" layoutX="248.0" layoutY="200.0" promptText="Email" />
+            <TextField id="PasswordTextField" fx:id="passwordField" layoutX="248.0" layoutY="226.0" promptText="Password" />
             <Button fx:id="deliveriesButton" layoutX="90.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickDeliveriesButton" prefHeight="31.0" prefWidth="90.0" text="Deliveries" />
             <Button fx:id="studentButton" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickStudentButton" prefHeight="31.0" prefWidth="90.0" text="Students" />
             <Button fx:id="moduleButton" layoutX="180.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickModuleButton" prefHeight="31.0" prefWidth="90.0" text="Modules" />

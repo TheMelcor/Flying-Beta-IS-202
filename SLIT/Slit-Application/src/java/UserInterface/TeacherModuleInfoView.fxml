@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.Controllers.TeacherModuleInfoViewController">
+   <children>
+      <SplitPane dividerPositions="0.5" layoutY="117.0" prefHeight="261.0" prefWidth="603.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="125.0" layoutY="14.0" text="Description">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="moduleInfoLabel" layoutX="45.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="220.33935546875" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="249.0" prefWidth="296.0">
+               <children>
+                  <Label layoutX="113.0" layoutY="14.0" text="Module Goals">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="moduleGoalLabel" layoutX="75.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="145.33935546875" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Label id="ModuleNameLabel" fx:id="moduleNameLabel" alignment="CENTER" layoutX="2.0" layoutY="64.0" prefHeight="29.0" prefWidth="600.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="moduleDateLabel" alignment="CENTER" layoutX="6.0" layoutY="379.0" prefHeight="14.0" prefWidth="600.0" text="Label" />
+      <Button fx:id="deliveriesButton" layoutX="90.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickDeliveriesButton" prefHeight="31.0" prefWidth="90.0" text="Deliveries" />
+      <Button fx:id="studentButton" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickStudentButton" prefHeight="31.0" prefWidth="90.0" text="Students" />
+      <Button fx:id="moduleButton" layoutX="180.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickModuleButton" prefHeight="31.0" prefWidth="90.0" text="Modules" />
+      <Button fx:id="createModuleButton" layoutX="270.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickCreateModuleButton" prefHeight="31.0" prefWidth="90.0" text="Create Module" />
+      <Button fx:id="logOutButton" layoutX="516.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickLogOutButton" prefHeight="31.0" prefWidth="90.0" text="Log Out" />
+   </children>
+</AnchorPane>
