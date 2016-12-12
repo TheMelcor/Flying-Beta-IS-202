@@ -61,7 +61,7 @@ public class LoginViewController implements Initializable {
             
         }
         else {
-            this.infoBarLabel.setText("Login Failed, u knob.");
+            this.infoBarLabel.setText("Login Failed.");
         }
         
     }

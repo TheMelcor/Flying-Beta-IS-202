@@ -73,33 +73,13 @@ public class TeacherCreateViewController implements Initializable {
         moduleHandler = new ModuleHandler();
     }    
 
-    private boolean checkIntInput(String input){
-        if (input.contains("[a-zA-Z]+")){
-            return false;
-        }
-        
-        else{
-            return true;
-        }
-    }
     
     @FXML
     private void onClickCreateButton(ActionEvent event) throws Exception{
-        boolean check = true;
         ModuleDataModel module = new ModuleDataModel();
         
-        if(!checkIntInput(this.moduleNrField.getText())){
-            check = false;
-        }
-        if(!checkIntInput(this.hourField.getText())){
-            check = false;
-        }
-        if(!checkIntInput(this.minuteField.getText())){
-            check = false;
-        }
-        if(!checkIntInput(this.secondsField.getText())){
-            check = false;
-        }
+        
+        
         module.setModuleNr(Integer.parseInt(this.moduleNrField.getText()));
         module.setModuleDesc(this.moduleDescField.getText());
         module.setModuleName(this.moduleNameField.getText());
@@ -111,12 +91,12 @@ public class TeacherCreateViewController implements Initializable {
                 + ":" + this.secondsField.getText();
         module.setHandinDate(moduleDate);
         
-        if (check){
+        if (!moduleHandler.checkIfModuleExsists(module.getModuleNr())){
             moduleHandler.saveModule(module);
             MainUserInterface.getInstance().setScene(ViewNames.teacherModuleView);
         }
         else{
-            errorLabel.setText("Input Error!");
+            errorLabel.setText("Please Pick A Different Module Number.");
         }
     }
     

@@ -77,4 +77,21 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote{
             e.printStackTrace();
         }
     }
+    
+    @Override
+    public boolean checkIfModuleExsists(int moduleNr){
+        ModuleDataModel module = new ModuleDataModel();
+        
+        try{
+           Module moduleResult = em.find(Module.class, moduleNr);
+           
+           module = DataModelConverter.convertModuleEntityToModel(moduleResult);
+           return true;
+        }
+        
+        catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

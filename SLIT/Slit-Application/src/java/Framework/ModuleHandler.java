@@ -57,4 +57,8 @@ public class ModuleHandler {
         this.lookupModuleSessionBeanRemote().saveModule(module);
     }
     
+    public boolean checkIfModuleExsists(int moduleNr){
+        return this.lookupModuleSessionBeanRemote().checkIfModuleExsists(moduleNr);
+    }
+    
 }

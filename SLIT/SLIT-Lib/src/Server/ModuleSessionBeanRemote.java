@@ -22,5 +22,8 @@ public interface ModuleSessionBeanRemote {
     public List<ModuleDataModel> getAllModules();
     
     public void saveModule(ModuleDataModel module);
+    
+    boolean checkIfModuleExsists(int moduleNr);
 
 }
+
