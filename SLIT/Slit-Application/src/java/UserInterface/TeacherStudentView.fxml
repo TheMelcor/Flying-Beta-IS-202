@@ -18,7 +18,7 @@
             <Label layoutX="285.0" layoutY="109.0" text="Add an user" />
             <TextField id="FirstNameField" fx:id="firstNameField" layoutX="248.0" layoutY="141.0" promptText="First Name" />
             <ComboBox id="UserRolePicker" fx:id="userRolePicker" layoutX="258.0" layoutY="256.0" prefHeight="22.0" prefWidth="114.0" promptText="User role" />
-            <Button id="AddUserButton" fx:id="addUserButton" layoutX="297.0" layoutY="294.0" mnemonicParsing="false" text="Add" />
+            <Button id="AddUserButton" fx:id="addUserButton" layoutX="297.0" layoutY="294.0" mnemonicParsing="false" onAction="#onClickAddUserButton" text="Add" />
             <TextField id="LastNameField" fx:id="lastNameField" layoutX="248.0" layoutY="172.0" promptText="Last Name" />
             <TextField id="EmailTextField" fx:id="emailField" layoutX="248.0" layoutY="200.0" promptText="Email" />
             <TextField id="PasswordTextField" fx:id="passwordField" layoutX="248.0" layoutY="226.0" promptText="Password" />

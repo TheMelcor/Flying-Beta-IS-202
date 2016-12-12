@@ -5,11 +5,14 @@
  */
 package UserInterface.Controllers;
 
+import DataModel.UserDataModel;
 import Framework.UserHandler;
 import UserInterface.MainUserInterface;
 import UserInterface.Names.ViewNames;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,6 +21,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 /**
@@ -41,13 +45,13 @@ public class TeacherStudentViewController implements Initializable {
     // ---- Ent Top Menu ----
     
     @FXML
-    private TableView<?> studentTable;
+    private TableView<UserDataModel> studentTable;
     @FXML
-    private TableColumn<?, ?> studentColumn;
+    private TableColumn<UserDataModel, String> studentColumn;
     @FXML
     private TextField firstNameField;
     @FXML
-    private ComboBox<?> userRolePicker;
+    private ComboBox<String> userRolePicker;
     @FXML
     private Button addUserButton;
     @FXML
@@ -57,17 +61,44 @@ public class TeacherStudentViewController implements Initializable {
     @FXML
     private TextField passwordField;
     
+    private UserHandler userHandler = new UserHandler();
+    
+    
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        this.studentColumn.setCellValueFactory(
+                new PropertyValueFactory<UserDataModel, String>("fullName"));
+        ObservableList<UserDataModel> userList = FXCollections.observableArrayList();
+        
+        for(UserDataModel user : this.userHandler.getAllStudents()){
+            userList.add(user);
+        }
+        
+        this.studentTable.setItems(userList);
+        
+        ObservableList<String> comboBoxItems = FXCollections.observableArrayList("Student","Teacher","Teaching Assistant");
+        this.userRolePicker.getItems().addAll(comboBoxItems);
     }    
 
     @FXML
     private void onMouseClickedStudentTable(MouseEvent event) {
+    }
+    
+    @FXML
+    private void onClickAddUserButton(ActionEvent event) throws Exception{
+        UserDataModel user = new UserDataModel();
+        user.setFirstName(this.firstNameField.getText());
+        user.setLastName(this.lastNameField.getText());
+        user.setEmail(this.emailField.getText());
+        user.setPassword(this.passwordField.getText());
+        user.setUserRole(userHandler.getUserRoleByName(this.userRolePicker.getValue()));
+        
+        this.userHandler.saveUser(user);
+        MainUserInterface.getInstance().setScene(ViewNames.teacherStudentView);
     }
 
     // ---- Start Top Menu on click functions ----

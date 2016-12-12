@@ -2,6 +2,7 @@ package Server;
 
 
 import DataModel.UserDataModel;
+import DataModel.UsrRoleDataModel;
 import java.util.List;
 import javax.ejb.Remote;
 /*
@@ -23,4 +24,6 @@ public interface UserSessionBeanRemote {
     List<UserDataModel> getAllUsers();
     
     void saveUser(UserDataModel user);
+    
+    List<UsrRoleDataModel> getAllUserRoles();
 }

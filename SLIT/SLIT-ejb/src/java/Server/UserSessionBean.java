@@ -7,7 +7,9 @@ package Server;
 
 import Common.DataModelConverter;
 import DataModel.UserDataModel;
+import DataModel.UsrRoleDataModel;
 import Database.User;
+import Database.Usrrole;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -122,6 +124,26 @@ public class UserSessionBean implements UserSessionBeanRemote{
             e.printStackTrace();
             return false;
         }
+    }
+    
+    @Override
+    public List<UsrRoleDataModel> getAllUserRoles(){
+        List<UsrRoleDataModel> usrRole = new ArrayList<UsrRoleDataModel>();
+        
+        try{
+            Query query = em.createNamedQuery("Usrrole.findAll", Usrrole.class);
+            
+            List<Usrrole> usrRoleEntities = query.getResultList();
+            
+            for (Usrrole userRole : usrRoleEntities){
+                usrRole.add(DataModelConverter.convertUsrRoleEntityToModel(userRole));
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        
+        return usrRole;
     }
     
 

@@ -6,7 +6,9 @@
 package Framework;
 
 import DataModel.UserDataModel;
+import DataModel.UsrRoleDataModel;
 import Server.UserSessionBeanRemote;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,9 +23,18 @@ import javax.naming.NamingException;
 public class UserHandler {
     
     private static UserDataModel loggedInUser;
+    private static UserDataModel selectedUser;
     
     public static UserDataModel getLoggedInUser(){
         return UserHandler.loggedInUser;
+    }
+    
+    public static UserDataModel getSelectedUser(){
+        return UserHandler.selectedUser;
+    }
+    
+    public static void setSelectedUser(UserDataModel user){
+        UserHandler.selectedUser = user;
     }
 
     private UserSessionBeanRemote lookupUserSessionBeanRemote() {
@@ -56,7 +67,32 @@ public class UserHandler {
         return this.lookupUserSessionBeanRemote().getAllUsers();
     }
     
+    public List<UserDataModel> getAllStudents(){
+        List<UserDataModel> students = new ArrayList<UserDataModel>();
+        for(UserDataModel user : this.getAllUsers()){
+            if (user.getUserRole().getRoleName().equals("Student")){
+                students.add(user);
+            }
+        }
+        return students;
+    }
+    
     public void saveUser(UserDataModel user){
         this.lookupUserSessionBeanRemote().saveUser(user);
+    }
+    
+    public List<UsrRoleDataModel> getAllUserRoles(){
+        return this.lookupUserSessionBeanRemote().getAllUserRoles();
+    }
+    
+    public UsrRoleDataModel getUserRoleByName(String name){
+        UsrRoleDataModel usrRole = new UsrRoleDataModel();
+        
+        for (UsrRoleDataModel role : getAllUserRoles()){
+            if (role.getRoleName().equals(name)){
+                usrRole = role;
+            }
+        }
+        return usrRole;
     }
 }
