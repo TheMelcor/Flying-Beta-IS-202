@@ -6,6 +6,24 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Button layoutY="1.0" mnemonicParsing="false" text="Students" />
+            <Button layoutX="73.0" layoutY="1.0" mnemonicParsing="false" text="Deliveries" />
+            <Button layoutX="151.0" layoutY="1.0" mnemonicParsing="false" text="Modules" />
+            <Button layoutX="533.0" layoutY="1.0" mnemonicParsing="false" text="Log Out" />
+            <Button layoutX="221.0" layoutY="1.0" mnemonicParsing="false" text="Create Module" />
+            <TableView layoutY="28.0" prefHeight="373.0" prefWidth="600.0">
+              <columns>
+                <TableColumn prefWidth="100.0" text="Module Nr" />
+                <TableColumn prefWidth="237.0" text="Description" />
+                  <TableColumn prefWidth="262.0" text="Due Date" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
